@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PantallaInicio">
+
+    <RelativeLayout
+        android:id="@+id/PantallaInicioLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        >
+        <Toolbar
+            android:id="@+id/toolbarPantallaInicio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#003C8F"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <Button
+                android:id="@+id/btn_Estadistica_back"
+                android:layout_width="25sp"
+                android:layout_height="23sp"
+                android:background="@android:drawable/ic_dialog_dialer"
+                android:onClick="activity_menu_con_iconos"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40sp"
+                android:text="Pantalla de inicio"
+                android:textColor="@android:color/white"
+                android:textSize="22sp" />
+
+        </Toolbar>
+
+        <Button
+            android:id="@+id/AgregarGasto"
+            android:layout_width="100sp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50sp"
+            android:layout_marginTop="250sp"
+            android:backgroundTint="@color/colorAccent"
+            android:text="Agregar gasto"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/AgregarDinero"
+            style="@android:style/Widget.DeviceDefault.Button"
+            android:layout_width="100sp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="250sp"
+            android:layout_marginTop="250sp"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="Agregar dinero"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="parent"
+
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RelativeLayout
+            android:id="@+id/SaldoDisponibleBackground"
+            android:layout_width="150sp"
+            android:layout_height="150sp"
+            android:background="@drawable/redondo"
+            android:layout_marginStart="25sp"
+            android:layout_marginTop="90sp"
+            >
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/SaldoDisponible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="45sp"
+            android:layout_marginTop="125sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="Saldo disponible:"
+            android:textColor="#FFFFFF"
+            />
+        <RelativeLayout
+            android:id="@+id/AhorroDiarioBackground"
+            android:layout_width="150sp"
+            android:layout_height="150sp"
+            android:background="@drawable/redondo"
+            android:layout_marginStart="225sp"
+            android:layout_marginTop="90sp"
+            >
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/AhorroDiario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="255sp"
+            android:layout_marginTop="125sp"
+            android:textStyle="bold"
+
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="Ahorro diario: "
+            android:textColor="#FFFFFF"
+            />
+
+
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
