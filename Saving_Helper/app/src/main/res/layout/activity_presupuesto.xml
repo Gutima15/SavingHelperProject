@@ -8,20 +8,22 @@
 
     <TextView
         android:id="@+id/containerPresupuesto"
-        android:layout_width="322dp"
-        android:layout_height="156dp"
+        android:layout_width="322sp"
+        android:layout_height="156sp"
+        android:layout_marginTop="107sp"
+        android:layout_marginBottom="468sp"
         android:background="@drawable/fondo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.133" />
+        app:layout_constraintTop_toTopOf="@+id/toolbarPresupuesto"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="226dp"
-        android:layout_height="61dp"
+        android:id="@+id/textView"
+        android:layout_width="226sp"
+        android:layout_height="61sp"
         android:clickable="false"
         android:text="Presupuesto para el periodo actual "
         android:textAlignment="center"
@@ -32,5 +34,92 @@
         app:layout_constraintStart_toStartOf="@+id/containerPresupuesto"
         app:layout_constraintTop_toTopOf="@+id/containerPresupuesto"
         app:layout_constraintVertical_bias="0.252" />
+
+    <TextView
+        android:id="@+id/lblPresupuesto"
+        android:layout_width="256sp"
+        android:layout_height="37sp"
+        android:clickable="false"
+        android:text="₡100000"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/containerPresupuesto"
+        app:layout_constraintEnd_toEndOf="@+id/containerPresupuesto"
+        app:layout_constraintStart_toStartOf="@+id/containerPresupuesto"
+        app:layout_constraintTop_toTopOf="@+id/containerPresupuesto"
+        app:layout_constraintVertical_bias="0.779" />
+
+    <Button
+        android:id="@+id/btnCambiarPresupuesto"
+        android:layout_width="162sp"
+        android:layout_height="59sp"
+        android:layout_marginTop="180sp"
+        android:background="@drawable/fondo"
+        android:fontFamily="sans-serif"
+        android:text="Cambiar"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/containerPresupuesto"/>
+
+    <Button
+        android:id="@+id/btnCambiarTipoDePeriodo"
+        android:layout_width="162sp"
+        android:layout_height="59sp"
+        android:layout_marginTop="96sp"
+        android:background="@drawable/fondo"
+        android:fontFamily="sans-serif"
+        android:text="Cambiar"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/lblPeriodo"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/lblPeriodo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="248sp"
+        android:layout_marginBottom="244sp"
+        android:text="Tipo de periodo actual"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/containerPresupuesto" />
+
+    <Toolbar
+        android:id="@+id/toolbarPresupuesto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#003C8F"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0sp">
+
+        <!--agregar on click-->
+        <Button
+            android:id="@+id/btn_presupuesto_back"
+            android:layout_width="35sp"
+            android:layout_height="30sp"
+            android:background="@drawable/abc_vector_test" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40sp"
+            android:text="Presupuesto"
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            tools:layout_editor_absoluteX="65sp"
+            tools:layout_editor_absoluteY="13sp" />
+
+    </Toolbar>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
