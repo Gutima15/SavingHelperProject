@@ -77,7 +77,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/lblPeriodo"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.427" />
 
     <TextView
         android:id="@+id/lblPeriodo"
@@ -88,11 +88,27 @@
         android:text="Tipo de periodo actual"
         android:textColor="@color/colorPrimary"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/lblTipoPeriodo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/containerPresupuesto" />
+        app:layout_constraintTop_toBottomOf="@+id/btnCambiarPresupuesto"
+        app:layout_constraintVertical_bias="0.474" />
+
+    <TextView
+        android:id="@+id/lblTipoPeriodo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="248sp"
+        android:layout_marginBottom="244sp"
+        android:text="Semanal"
+        android:textColor="@color/colorPrimary"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toTopOf="@id/btnCambiarTipoDePeriodo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/containerPresupuesto"
+        app:layout_constraintVertical_bias="0.225" />
 
     <Toolbar
         android:id="@+id/toolbarPresupuesto"
