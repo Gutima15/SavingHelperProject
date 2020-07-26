@@ -71,7 +71,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/presupuesto"
-                android:onClick="activity_presupuesto"
+
                 />
             <ImageButton
                 android:id="@+id/AgregarDinero"
@@ -142,8 +142,8 @@
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/configuracion"
-                android:onClick="activity_config"
+                app:srcCompat="@drawable/info_usuario"
+
                 />
             <ImageButton
                 android:id="@+id/QuienesSomos"

@@ -37,9 +37,7 @@
         <activity
             android:name=".QuienesSomos"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
-        <activity
-            android:name=".Config"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+
         <activity
             android:name=".MenuConIconos"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
