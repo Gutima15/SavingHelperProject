@@ -7,7 +7,7 @@
     tools:context=".Config">
 
     <RelativeLayout
-        android:id="@+id/Menu"
+        android:id="@+id/ConfigLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#FFFFFF"
@@ -55,33 +55,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Switch
-            android:id="@+id/SwitchDaltonico"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="350sp"
-            android:layout_marginTop="160sp"
-
-            app:layout_constraintEnd_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:text="" />
-
-        <TextView
-            android:id="@+id/ModoDaltico"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30sp"
-            android:layout_marginTop="160sp"
-            android:text="Modo Daltonico"
-            android:textAlignment="viewStart"
-            android:textColor="@color/colorPrimary"
-            android:textSize="22sp"
-            app:layout_constraintEnd_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <Switch
             android:id="@+id/SwitchNotificaciones"
@@ -101,7 +74,7 @@
             android:layout_height="wrap_content"
             android:text="Modificar Información de usuario"
             android:layout_marginStart="30sp"
-            android:layout_marginTop="240sp"
+            android:layout_marginTop="160sp"
             android:textAlignment="viewStart"
             android:textColor="@color/colorPrimary"
             android:textSize="22sp"

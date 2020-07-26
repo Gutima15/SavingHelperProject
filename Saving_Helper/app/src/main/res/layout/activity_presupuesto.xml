@@ -7,7 +7,7 @@
     tools:context=".Presupuesto">
 
     <RelativeLayout
-        android:id="@+id/Area"
+        android:id="@+id/PresupuestoLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#FFFFFF"
@@ -98,7 +98,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="170sp"
             android:layout_marginTop="440sp"
-            android:text="Mensual"
+            android:text="Semanal"
             android:textColor="@color/colorPrimary"
             android:textSize="24sp"
             />
