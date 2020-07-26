@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ModificarInfoUsuarioActivity">
+
+    <Toolbar
+        android:id="@+id/toolbarRegistro2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#003C8F"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btn_menu_back"
+            android:layout_width="35sp"
+            android:layout_height="30sp"
+            android:background="@android:drawable/ic_dialog_dialer" />
+        <!---android:onClick="toMenu"-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40sp"
+            android:text="Modificar información"
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            tools:layout_editor_absoluteX="65sp"
+            tools:layout_editor_absoluteY="13sp" />
+
+    </Toolbar>
+
+    <TextView
+        android:id="@+id/labelContraseñaNueva"
+        android:layout_width="144sp"
+        android:layout_height="24sp"
+        android:layout_marginStart="50sp"
+        android:layout_marginTop="5sp"
+        android:layout_marginEnd="217sp"
+        android:text="Contraseña"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelCambio" />
+
+    <EditText
+        android:id="@+id/ContraseñaNueva"
+        android:layout_width="263sp"
+        android:layout_height="43sp"
+        android:layout_marginStart="67sp"
+        android:layout_marginTop="12sp"
+        android:layout_marginEnd="97sp"
+        android:ems="10"
+        android:hint="Ingrese su contraseña"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/colorHint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelContraseñaNueva"
+        android:imeOptions="actionNext"/>
+
+    <TextView
+        android:id="@+id/labelcontraseñaVerificacion"
+        android:layout_width="89sp"
+        android:layout_height="21sp"
+        android:layout_marginStart="50sp"
+        android:layout_marginTop="5sp"
+        android:layout_marginEnd="272sp"
+        android:text="Verificación de contraseña"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ContraseñaNueva" />
+
+    <EditText
+        android:id="@+id/contraseñaVerificacion"
+        android:layout_width="259sp"
+        android:layout_height="42sp"
+        android:layout_marginStart="67sp"
+        android:layout_marginTop="12sp"
+        android:layout_marginEnd="97sp"
+        android:ems="10"
+        android:hint="Repita su contraseña"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/colorHint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelcontraseñaVerificacion"
+        android:imeOptions="actionDone"/>
+
+    <EditText
+        android:id="@+id/labelCorreoMod"
+        android:layout_width="255sp"
+        android:layout_height="48sp"
+        android:layout_marginStart="67sp"
+        android:layout_marginTop="10sp"
+        android:layout_marginEnd="97sp"
+        android:ems="10"
+        android:hint="Ingrese su correo"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/colorHint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelCorreoMod"
+        android:imeOptions="actionNext"/>
+
+    <EditText
+        android:id="@+id/userNameMod"
+        android:layout_width="255sp"
+        android:layout_height="48sp"
+        android:layout_marginStart="67sp"
+        android:layout_marginTop="10sp"
+        android:layout_marginEnd="97sp"
+        android:ems="10"
+        android:hint="Ingrese su nombre de usuario"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/colorHint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelUserNameMod"
+        android:imeOptions="actionDone"/>
+
+    <TextView
+        android:id="@+id/labelUserNameMod"
+        android:layout_width="144sp"
+        android:layout_height="24sp"
+        android:layout_marginStart="50sp"
+        android:layout_marginTop="72sp"
+        android:layout_marginEnd="217sp"
+        android:text="Nombre de usuario"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelCorreoMod" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="317sp"
+        android:layout_height="21sp"
+        android:layout_marginStart="34sp"
+        android:layout_marginEnd="60sp"
+        android:text="________________________________________________"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userNameMod" />
+
+    <TextView
+        android:id="@+id/labelCambio"
+        android:layout_width="172sp"
+        android:layout_height="21sp"
+        android:layout_marginStart="119sp"
+        android:layout_marginEnd="120sp"
+        android:text="Cambio de contraseña"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/apellidosMod"
+        android:layout_width="255sp"
+        android:layout_height="48sp"
+        android:layout_marginStart="67sp"
+        android:layout_marginTop="10sp"
+        android:layout_marginEnd="97sp"
+        android:ems="10"
+        android:hint="Ingrese sus apellidos"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorPrimary"
+        android:textColorHighlight="@color/colorHint"
+        android:textColorHint="@color/colorHint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelApellidosMod"
+        android:imeOptions="actionNext"/>
+
+    <TextView
+        android:id="@+id/labelCorreoMod"
+        android:layout_width="144sp"
+        android:layout_height="24sp"
+        android:layout_marginStart="50sp"
+        android:layout_marginTop="10sp"
+        android:layout_marginEnd="217sp"
+        android:text="Correo"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/apellidosMod" />
+
+    <TextView
+        android:id="@+id/labelApellidosMod"
+        android:layout_width="144sp"
+        android:layout_height="24sp"
+        android:layout_marginStart="50sp"
+        android:layout_marginTop="10sp"
+        android:layout_marginEnd="217sp"
+        android:text="Apellidos"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nombrePilaMod" />
+
+    <EditText
+        android:id="@+id/nombrePilaMod"
+        android:layout_width="255sp"
+        android:layout_height="48sp"
+        android:layout_marginStart="67sp"
+        android:layout_marginTop="10sp"
+        android:layout_marginEnd="97sp"
+        android:ems="10"
+        android:hint="Ingrese su nombre de pila"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/colorHint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelNombrePilaMod"
+        android:imeOptions="actionNext"/>
+
+    <TextView
+        android:id="@+id/labelNombrePilaMod"
+        android:layout_width="144sp"
+        android:layout_height="24sp"
+        android:layout_marginStart="50sp"
+        android:layout_marginTop="22sp"
+        android:layout_marginEnd="217sp"
+        android:text="Nombre de pila"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarRegistro2" />
+
+    <Button
+        android:id="@+id/botonEntrar3"
+        android:layout_width="123sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="93sp"
+        android:layout_marginTop="10sp"
+        android:layout_marginEnd="39sp"
+        android:layout_marginBottom="24sp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:text="Aceptar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/botonEntrar4"
+        app:layout_constraintTop_toBottomOf="@+id/contraseñaVerificacion" />
+
+    <Button
+        android:id="@+id/botonEntrar4"
+        android:layout_width="123sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="34sp"
+        android:layout_marginTop="10sp"
+        android:layout_marginBottom="24sp"
+        android:backgroundTint="@color/colorAccent"
+        android:text="Cancelar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contraseñaVerificacion" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

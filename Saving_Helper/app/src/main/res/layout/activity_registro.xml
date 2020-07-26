@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegistroActivity">
+
+    <TextView
+        android:id="@+id/labelNombrePila"
+        android:layout_width="116sp"
+        android:layout_height="23sp"
+        android:layout_marginStart="50sp"
+        android:layout_marginTop="32sp"
+        android:layout_marginEnd="245sp"
+        android:text="Nombre de pila"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarRegistro" />
+
+    <EditText
+        android:id="@+id/nombrePila"
+        android:layout_width="257sp"
+        android:layout_height="38sp"
+        android:layout_marginStart="67sp"
+        android:layout_marginTop="12sp"
+        android:layout_marginEnd="87dp"
+        android:ems="10"
+        android:hint="Ingrese el nombre de pila"
+        android:imeOptions="actionNext"
+        android:inputType="textShortMessage"
+        android:maxLength="50"
+        android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/colorHint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelNombrePila" />
+
+    <TextView
+        android:id="@+id/labelApellidos"
+        android:layout_width="73sp"
+        android:layout_height="25sp"
+        android:layout_marginStart="50sp"
+        android:layout_marginTop="15sp"
+        android:layout_marginEnd="288sp"
+        android:text="Apellidos"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nombrePila" />
+
+    <EditText
+        android:id="@+id/apellidos"
+        android:layout_width="258dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="67sp"
+        android:layout_marginTop="12sp"
+        android:layout_marginEnd="83dp"
+        android:ems="10"
+        android:hint="Ingrese sus apellidos"
+        android:imeOptions="actionNext"
+        android:inputType="textPersonName"
+        android:maxLength="50"
+        android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/colorHint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelApellidos" />
+
+    <TextView
+        android:id="@+id/labelCorreo"
+        android:layout_width="56sp"
+        android:layout_height="22sp"
+        android:layout_marginStart="50sp"
+        android:layout_marginTop="15sp"
+        android:layout_marginEnd="305sp"
+        android:text="Correo"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/apellidos" />
+
+    <EditText
+        android:id="@+id/correo"
+        android:layout_width="261dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="67sp"
+        android:layout_marginTop="12sp"
+        android:layout_marginEnd="83dp"
+        android:ems="10"
+        android:hint="Ingrese su correo"
+        android:imeOptions="actionNext"
+        android:inputType="textEmailAddress"
+        android:maxLength="50"
+        android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/colorHint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelCorreo" />
+
+    <TextView
+        android:id="@+id/labelUserName"
+        android:layout_width="144sp"
+        android:layout_height="24sp"
+        android:layout_marginStart="50sp"
+        android:layout_marginTop="15sp"
+        android:layout_marginEnd="217sp"
+        android:text="Nombre de usuario"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/correo" />
+
+    <EditText
+        android:id="@+id/userName"
+        android:layout_width="263sp"
+        android:layout_height="43sp"
+        android:layout_marginStart="67sp"
+        android:layout_marginTop="12sp"
+        android:layout_marginEnd="83dp"
+        android:ems="10"
+        android:hint="Ingrese su nombre de usuario"
+        android:imeOptions="actionNext"
+        android:inputType="textPersonName"
+        android:maxLength="30"
+        android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/colorHint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelUserName" />
+
+    <TextView
+        android:id="@+id/labelContraseñaRegistro"
+        android:layout_width="89sp"
+        android:layout_height="21sp"
+        android:layout_marginStart="50sp"
+        android:layout_marginTop="15sp"
+        android:layout_marginEnd="272sp"
+        android:text="Contraseña"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userName" />
+
+    <EditText
+        android:id="@+id/contraseñaInicial"
+        android:layout_width="262dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="83dp"
+        android:ems="10"
+        android:hint="Ingrese su contraseña"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:maxLength="50"
+        android:textColorHint="@color/colorHint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelContraseñaRegistro" />
+
+    <Button
+        android:id="@+id/botonEntrar2"
+        android:layout_width="123sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="155sp"
+        android:layout_marginTop="48sp"
+        android:layout_marginEnd="155sp"
+        android:layout_marginBottom="100sp"
+        android:backgroundTint="@color/colorPrimary"
+        android:fontFamily="sans-serif"
+        android:text="Entrar"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contraseña"
+        android:onClick="pruebaC"/>
+
+    <Toolbar
+        android:id="@+id/toolbarRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#003C8F"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <Button
+            android:id="@+id/btn_registro_back"
+            android:layout_width="35sp"
+            android:layout_height="30sp"
+            android:background="@drawable/abc_vector_test"
+            android:onClick="retrocederInicio" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40sp"
+            android:text="Registro"
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            tools:layout_editor_absoluteX="65sp"
+            tools:layout_editor_absoluteY="13sp" />
+
+    </Toolbar>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
