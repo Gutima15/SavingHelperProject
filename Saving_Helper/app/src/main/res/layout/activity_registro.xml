@@ -8,11 +8,11 @@
 
     <TextView
         android:id="@+id/labelNombrePila"
-        android:layout_width="116dp"
-        android:layout_height="23dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="245dp"
+        android:layout_width="116sp"
+        android:layout_height="23sp"
+        android:layout_marginStart="50sp"
+        android:layout_marginTop="32sp"
+        android:layout_marginEnd="245sp"
         android:text="Nombre de pila"
         android:textColor="@color/colorPrimary"
         android:textSize="16sp"
@@ -22,26 +22,29 @@
 
     <EditText
         android:id="@+id/nombrePila"
-        android:layout_width="257dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="67dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="97dp"
+        android:layout_width="257sp"
+        android:layout_height="38sp"
+        android:layout_marginStart="67sp"
+        android:layout_marginTop="12sp"
+        android:layout_marginEnd="87dp"
         android:ems="10"
         android:hint="Ingrese el nombre de pila"
-        android:inputType="textPersonName"
+        android:imeOptions="actionNext"
+        android:inputType="textShortMessage"
+        android:maxLength="50"
         android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/colorHint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/labelNombrePila" />
 
     <TextView
         android:id="@+id/labelApellidos"
-        android:layout_width="73dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="288dp"
+        android:layout_width="73sp"
+        android:layout_height="25sp"
+        android:layout_marginStart="50sp"
+        android:layout_marginTop="15sp"
+        android:layout_marginEnd="288sp"
         android:text="Apellidos"
         android:textColor="@color/colorPrimary"
         android:textSize="16sp"
@@ -51,26 +54,29 @@
 
     <EditText
         android:id="@+id/apellidos"
-        android:layout_width="254dp"
+        android:layout_width="258dp"
         android:layout_height="40dp"
-        android:layout_marginStart="67dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="97dp"
+        android:layout_marginStart="67sp"
+        android:layout_marginTop="12sp"
+        android:layout_marginEnd="83dp"
         android:ems="10"
         android:hint="Ingrese sus apellidos"
+        android:imeOptions="actionNext"
         android:inputType="textPersonName"
+        android:maxLength="50"
         android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/colorHint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/labelApellidos" />
 
     <TextView
         android:id="@+id/labelCorreo"
-        android:layout_width="56dp"
-        android:layout_height="22dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="305dp"
+        android:layout_width="56sp"
+        android:layout_height="22sp"
+        android:layout_marginStart="50sp"
+        android:layout_marginTop="15sp"
+        android:layout_marginEnd="305sp"
         android:text="Correo"
         android:textColor="@color/colorPrimary"
         android:textSize="16sp"
@@ -80,26 +86,29 @@
 
     <EditText
         android:id="@+id/correo"
-        android:layout_width="255dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="67dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="97dp"
+        android:layout_width="261dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="67sp"
+        android:layout_marginTop="12sp"
+        android:layout_marginEnd="83dp"
         android:ems="10"
         android:hint="Ingrese su correo"
-        android:inputType="textPersonName"
+        android:imeOptions="actionNext"
+        android:inputType="textEmailAddress"
+        android:maxLength="50"
         android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/colorHint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/labelCorreo" />
 
     <TextView
         android:id="@+id/labelUserName"
-        android:layout_width="144dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="217dp"
+        android:layout_width="144sp"
+        android:layout_height="24sp"
+        android:layout_marginStart="50sp"
+        android:layout_marginTop="15sp"
+        android:layout_marginEnd="217sp"
         android:text="Nombre de usuario"
         android:textColor="@color/colorPrimary"
         android:textSize="16sp"
@@ -109,26 +118,29 @@
 
     <EditText
         android:id="@+id/userName"
-        android:layout_width="263dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="67dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="97dp"
+        android:layout_width="263sp"
+        android:layout_height="43sp"
+        android:layout_marginStart="67sp"
+        android:layout_marginTop="12sp"
+        android:layout_marginEnd="83dp"
         android:ems="10"
         android:hint="Ingrese su nombre de usuario"
+        android:imeOptions="actionNext"
         android:inputType="textPersonName"
+        android:maxLength="30"
         android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/colorHint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/labelUserName" />
 
     <TextView
-        android:id="@+id/labelcontraseña"
-        android:layout_width="89dp"
-        android:layout_height="21dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="272dp"
+        android:id="@+id/labelContraseñaRegistro"
+        android:layout_width="89sp"
+        android:layout_height="21sp"
+        android:layout_marginStart="50sp"
+        android:layout_marginTop="15sp"
+        android:layout_marginEnd="272sp"
         android:text="Contraseña"
         android:textColor="@color/colorPrimary"
         android:textSize="16sp"
@@ -137,28 +149,30 @@
         app:layout_constraintTop_toBottomOf="@+id/userName" />
 
     <EditText
-        android:id="@+id/contraseña"
-        android:layout_width="259dp"
-        android:layout_height="42dp"
+        android:id="@+id/contraseñaInicial"
+        android:layout_width="262dp"
+        android:layout_height="45dp"
         android:layout_marginStart="67dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="97dp"
+        android:layout_marginEnd="83dp"
         android:ems="10"
         android:hint="Ingrese su contraseña"
-        android:inputType="textPersonName"
-        android:textColor="@color/colorPrimary"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:maxLength="50"
+        android:textColorHint="@color/colorHint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/labelcontraseña" />
+        app:layout_constraintTop_toBottomOf="@+id/labelContraseñaRegistro" />
 
     <Button
         android:id="@+id/botonEntrar2"
-        android:layout_width="123dp"
+        android:layout_width="123sp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="155dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="155dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginStart="155sp"
+        android:layout_marginTop="48sp"
+        android:layout_marginEnd="155sp"
+        android:layout_marginBottom="100sp"
         android:backgroundTint="@color/colorPrimary"
         android:fontFamily="sans-serif"
         android:text="Entrar"
@@ -167,13 +181,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contraseña" />
+        app:layout_constraintTop_toBottomOf="@+id/contraseña"
+        android:onClick="pruebaC"/>
 
     <Toolbar
         android:id="@+id/toolbarRegistro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#003C8F">
+        android:background="#003C8F"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
 
         <Button
@@ -181,7 +199,7 @@
             android:layout_width="35sp"
             android:layout_height="30sp"
             android:background="@drawable/abc_vector_test"
-            android:onClick="retrocederInicio"/>
+            android:onClick="retrocederInicio" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -190,8 +208,8 @@
             android:text="Registro"
             android:textColor="@android:color/white"
             android:textSize="22sp"
-            tools:layout_editor_absoluteX="65dp"
-            tools:layout_editor_absoluteY="13dp" />
+            tools:layout_editor_absoluteX="65sp"
+            tools:layout_editor_absoluteY="13sp" />
 
     </Toolbar>
 
