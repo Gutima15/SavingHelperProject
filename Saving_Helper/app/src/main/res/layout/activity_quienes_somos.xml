@@ -12,7 +12,7 @@
         android:background="#FFFFFF"
         >
         <Toolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/toolbarQuienesSomos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#003C8F"
@@ -25,6 +25,7 @@
                 android:layout_width="25sp"
                 android:layout_height="23sp"
                 android:background="@android:drawable/ic_dialog_dialer"
+                android:onClick="activity_menu_con_iconos"
                 />
 
             <TextView
@@ -42,8 +43,8 @@
             android:id="@+id/DesactivarNotificaciones"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginStart="30sp"
+            android:layout_marginTop="80sp"
             android:text="Somos un grupo de estudiantes del Instituto Tecnológico de Costa Rica (TEC) , con el objetivo de realizar una aplicación que asista la planificación financiera personal."
             android:textAlignment="viewStart"
             android:textColor="@color/colorPrimary"
@@ -57,8 +58,8 @@
             android:id="@+id/Contacto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="480dp"
+            android:layout_marginStart="30sp"
+            android:layout_marginTop="480sp"
             android:text="Contacto:"
             android:textAlignment="viewStart"
             android:textColor="#000000"
@@ -72,8 +73,8 @@
             android:id="@+id/Correo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="500dp"
+            android:layout_marginStart="40sp"
+            android:layout_marginTop="500sp"
             android:text="Correo: savingHelper@gmail.com "
             android:textAlignment="viewStart"
             android:textColor="#000000"
