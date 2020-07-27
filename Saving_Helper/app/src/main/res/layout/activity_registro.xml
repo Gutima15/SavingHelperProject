@@ -18,7 +18,8 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarRegistro" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbarRegistro"
+        />
 
     <EditText
         android:id="@+id/nombrePila"
@@ -175,7 +176,7 @@
         android:layout_marginBottom="47dp"
         android:backgroundTint="@color/colorPrimary"
         android:fontFamily="sans-serif"
-        android:onClick="pruebaC"
+        android:onClick="resgistrarUsuario"
         android:text="Entrar"
         android:textColor="@android:color/white"
         android:textSize="18sp"
