@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PopUpEtiquetaActivity"
+    android:background="@android:color/transparent"
+    >
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="575sp"
+            android:layout_centerVertical="true">
+            <Toolbar
+                android:id="@+id/toolbar_Popup"
+                android:layout_width="match_parent"
+                android:layout_height="60sp"
+                android:background="#003C8F">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Agregar etiqueta"
+                    android:textColor="@android:color/white"
+                    android:textSize="22sp"
+
+                    />
+
+            </Toolbar>
+
+            <TextView
+                android:id="@+id/textView_PopUpEtiqueta_nombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="Nombre:"
+                android:textColor="@android:color/black"
+                android:layout_marginStart="25sp"
+                android:layout_marginTop="25sp"
+                android:layout_below="@+id/toolbar_Popup"
+                />
+            <EditText
+                android:id="@+id/editText_PopUpEtiqueta_nombre"
+                android:layout_below="@+id/textView_PopUpEtiqueta_nombre"
+                android:layout_marginStart="25sp"
+                android:layout_marginTop="15sp"
+                android:textSize="18sp"
+                android:imeOptions="actionDone"
+                android:layout_width="300sp"
+                android:layout_height="45sp"
+                android:textAlignment="center"
+                android:shadowColor="@android:color/black"
+                android:background="@drawable/ic_edittext_circular"/>
+
+            <TextView
+                android:id="@+id/textView_PopUpEtiqueta_Color"
+                android:layout_below="@+id/editText_PopUpEtiqueta_nombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="Seleccione un color:"
+                android:textColor="@android:color/black"
+                android:layout_marginStart="25sp"
+                android:layout_marginTop="25sp"
+
+                />
+
+            <GridView
+                android:id="@+id/grid_PopUpEtiqueta"
+                android:layout_below="@id/textView_PopUpEtiqueta_Color"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15sp"
+                android:background="@android:color/white"
+                android:layout_width="360sp"
+                android:layout_height="150sp"
+                android:numColumns="4"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/textView_PopUpEtiqueta_ColorSeleccionado"
+                android:layout_below="@+id/grid_PopUpEtiqueta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="Color seleccionado:"
+                android:textColor="@android:color/black"
+                android:layout_marginStart="25sp"
+                android:layout_marginTop="40sp"
+
+                />
+            <ImageView
+                android:id="@+id/image_ColorCuadroActual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_cuadro_color"
+                android:layout_below="@+id/grid_PopUpEtiqueta"
+                android:layout_toRightOf="@+id/textView_PopUpEtiqueta_ColorSeleccionado"
+                android:layout_marginTop="43sp"
+                android:layout_marginStart="25sp"
+                />
+
+
+
+            <Button
+                android:id="@+id/button_PopUpEtiqueta_Cancelar"
+                android:layout_below="@+id/textView_PopUpEtiqueta_ColorSeleccionado"
+                android:layout_marginStart="60sp"
+                android:layout_marginTop="45sp"
+                android:layout_width="100sp"
+                android:layout_height="45sp"
+                android:text="Cancelar"
+                android:backgroundTint="#BB5858"/>
+
+            <Button
+                android:id="@+id/button_PopUpEtiqueta_Agregar"
+                android:layout_below="@+id/textView_PopUpEtiqueta_ColorSeleccionado"
+                android:layout_toRightOf="@+id/button_PopUpEtiqueta_Cancelar"
+                android:layout_marginStart="60sp"
+                android:layout_marginTop="45sp"
+                android:layout_width="100sp"
+                android:layout_height="45sp"
+                android:text="Aceptar"
+                android:backgroundTint="#15BCF9"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+

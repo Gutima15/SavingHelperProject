@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AgregarGastoActivity">
+
+    <Toolbar
+        android:id="@+id/toolbarRegistro3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#003C8F"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btn_menu_back"
+            android:layout_width="35sp"
+            android:layout_height="39sp"
+            android:background="@android:drawable/ic_dialog_dialer"
+            android:onClick="activity_menu_con_iconos"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40sp"
+            android:text="Agregar gasto"
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            tools:layout_editor_absoluteX="65sp"
+            tools:layout_editor_absoluteY="13sp" />
+
+    </Toolbar>
+
+    <ImageView
+        android:id="@+id/circuloDeFondoAgregar2"
+        android:layout_width="313sp"
+        android:layout_height="213sp"
+        android:layout_marginStart="50sp"
+        android:layout_marginTop="16sp"
+        android:layout_marginEnd="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarRegistro3"
+        app:srcCompat="@drawable/redondojorge" />
+
+    <EditText
+        android:id="@+id/nombreGasto2"
+        android:layout_width="254sp"
+        android:layout_height="43sp"
+        android:layout_marginStart="67sp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="90sp"
+        android:ems="10"
+        android:hint="Ingrese el nombre del gasto"
+        android:imeOptions="actionNext"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/colorHint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelNombreGasto2" />
+
+    <EditText
+        android:id="@+id/monto2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="67sp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="134sp"
+        android:ems="10"
+        android:hint="Ingrese el monto"
+        android:imeOptions="actionDone"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/colorHint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelMonto2" />
+
+    <Spinner
+        android:id="@+id/etiquetasDropDown2"
+        android:layout_width="254sp"
+        android:layout_height="49sp"
+        android:layout_marginStart="67sp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="90sp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelEtiquetasDropDown2" />
+
+    <Button
+        android:id="@+id/botonEntrar5"
+        android:layout_width="123sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="34sp"
+        android:layout_marginTop="10sp"
+        android:layout_marginBottom="24sp"
+        android:backgroundTint="@color/colorAccent"
+        android:text="Cancelar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contraseñaVerificacion"
+        android:onClick="activity_pantalla_inicio"/>
+
+    <Button
+        android:id="@+id/botonEntrar6"
+        android:layout_width="123sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="93sp"
+        android:layout_marginTop="10sp"
+        android:layout_marginEnd="39sp"
+        android:layout_marginBottom="24sp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:text="Aceptar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/botonEntrar4"
+        app:layout_constraintTop_toBottomOf="@+id/contraseñaVerificacion" />
+
+    <TextView
+        android:id="@+id/labelNombreGasto2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50sp"
+        android:layout_marginTop="12sp"
+        android:layout_marginEnd="234sp"
+        android:text="Nombre del gasto"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/circuloDeFondoAgregar2" />
+
+    <TextView
+        android:id="@+id/labelMonto2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50sp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="315sp"
+        android:text="Monto"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nombreGasto2" />
+
+    <TextView
+        android:id="@+id/labelEtiquetasDropDown2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48sp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="224sp"
+        android:text="Seleccione etiqueta"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/monto2" />
+
+    <TextView
+        android:id="@+id/saldoDisponible2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40sp"
+        android:text="Saldo disponible"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarRegistro3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

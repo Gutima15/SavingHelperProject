@@ -77,8 +77,9 @@ que será añadido."
         <Button
             android:id="@+id/btn_agregar_dinero_back"
             android:layout_width="35sp"
-            android:layout_height="30sp"
-            android:background="@drawable/abc_vector_test" />
+            android:layout_height="35sp"
+            android:background="@android:drawable/ic_dialog_dialer"
+            android:onClick="activity_menu_con_iconos"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -120,7 +121,8 @@ que será añadido."
         android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnCancelarAgregarDinero"
-        app:layout_constraintTop_toTopOf="@+id/btnCancelarAgregarDinero" />
+        app:layout_constraintTop_toTopOf="@+id/btnCancelarAgregarDinero"
+        android:onClick="activity_pantalla_inicio"/>
 
     <Button
         android:id="@+id/btnCancelarAgregarDinero"
@@ -137,7 +139,8 @@ que será añadido."
         app:layout_constraintEnd_toStartOf="@+id/btnAceptarAgregarDinero"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarAgregarDinero"
-        app:layout_constraintVertical_bias="0.052" />
+        app:layout_constraintVertical_bias="0.052"
+        android:onClick="activity_pantalla_inicio"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
