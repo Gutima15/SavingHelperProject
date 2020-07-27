@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300sp"
+    android:layout_height="325sp"
+    android:minHeight="325sp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <Toolbar
+        android:id="@+id/toolbar_cambiar_periodo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#003C8F"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0sp">
+
+        <!--agregar on click-->
+        <Button
+            android:id="@+id/btn_cambiar_periodo_presupuesto_back"
+            android:layout_width="35sp"
+            android:layout_height="30sp"
+            android:background="@drawable/abc_vector_test" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40sp"
+            android:text="Cambiar periodo"
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            tools:layout_editor_absoluteX="65sp"
+            tools:layout_editor_absoluteY="13sp" />
+
+    </Toolbar>
+
+    <RadioGroup
+        android:id="@+id/rgrpBotones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_cambiar_periodo"
+        app:layout_constraintVertical_bias="0.0">
+
+        <RadioButton
+            android:id="@+id/rbtn_semanal"
+            android:layout_width="101sp"
+            android:layout_height="21sp"
+            android:layout_marginTop="32dp"
+            android:buttonTint="#003C8F"
+            android:text="Semanal"
+            app:layout_constraintBottom_toTopOf="@id/rbtn_quincenal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <RadioButton
+            android:id="@+id/rbtn_quincenal"
+            android:layout_width="101sp"
+            android:layout_height="21sp"
+            android:layout_marginTop="32dp"
+            android:buttonTint="#003C8F"
+            android:text="Quincenal"
+            app:layout_constraintBottom_toTopOf="@id/rbtn_mensual"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rbtn_semanal" />
+
+        <RadioButton
+            android:id="@+id/rbtn_mensual"
+            android:layout_width="101sp"
+            android:layout_height="21sp"
+            android:layout_marginTop="32dp"
+            android:buttonTint="#003C8F"
+            android:text="Mensual"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rbtn_quincenal" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_cancelar_cambio_periodo"
+        android:layout_width="120sp"
+        android:layout_height="37sp"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/fondo_botones_rojo"
+        android:text="Cancelar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_aceptar_cambio_periodo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rgrpBotones"
+        app:layout_constraintVertical_bias="0.982" />
+
+    <Button
+        android:id="@+id/btn_aceptar_cambio_periodo"
+        android:layout_width="120sp"
+        android:layout_height="37sp"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/fondo_botones_celeste"
+        android:text="Aceptar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_cancelar_cambio_periodo"
+        app:layout_constraintTop_toBottomOf="@+id/rgrpBotones"
+        app:layout_constraintVertical_bias="0.982" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
