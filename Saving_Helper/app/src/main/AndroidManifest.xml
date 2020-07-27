@@ -50,7 +50,7 @@
     <activity android:name=".PopUpEtiquetaActivity"></activity>
         <activity
             android:name=".EtiquetaActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
     </application>
 
 </manifest>
