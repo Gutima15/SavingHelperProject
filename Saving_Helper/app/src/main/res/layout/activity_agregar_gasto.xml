@@ -19,8 +19,8 @@
             android:id="@+id/btn_menu_back"
             android:layout_width="35sp"
             android:layout_height="39sp"
-            android:background="@android:drawable/ic_dialog_dialer" />
-        <!---android:onClick="toMenu"-->
+            android:background="@android:drawable/ic_dialog_dialer"
+            android:onClick="activity_menu_con_iconos"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -101,7 +101,8 @@
         android:text="Cancelar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contraseñaVerificacion" />
+        app:layout_constraintTop_toBottomOf="@+id/contraseñaVerificacion"
+        android:onClick="activity_pantalla_inicio"/>
 
     <Button
         android:id="@+id/botonEntrar6"

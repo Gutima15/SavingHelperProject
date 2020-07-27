@@ -96,7 +96,8 @@
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/agregargasto" />
+                app:srcCompat="@drawable/agregargasto"
+                android:onClick="activity_agregar_gasto"/>
             <ImageButton
                 android:id="@+id/Objetivo"
                 android:layout_width="wrap_content"
@@ -143,6 +144,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/info_usuario"
+                android:onClick="activity_modificar_info_usuario"
 
                 />
             <ImageButton

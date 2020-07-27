@@ -20,14 +20,14 @@ public class MenuConIconos extends AppCompatActivity {
         startActivity(intent);
     }
 
-    /*
-    public void activity_config(View v){
-        Intent intent = new Intent(this, Config.class);
+
+    public void activity_modificar_info_usuario(View v){
+        Intent intent = new Intent(this, ModificarInfoUsuarioActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 
-     */
+
 
     public void activity_graficas(View v){
         Intent intent = new Intent(this, Graficas.class);
@@ -48,6 +48,11 @@ public class MenuConIconos extends AppCompatActivity {
 
     public void activity_quienes_somos(View v){
         Intent intent = new Intent(this, QuienesSomos.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
+    public void activity_agregar_gasto(View v) {
+        Intent intent = new Intent(this, AgregarGastoActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
