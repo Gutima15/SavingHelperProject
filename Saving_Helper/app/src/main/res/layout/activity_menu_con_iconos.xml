@@ -62,6 +62,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/presupuesto"
+                android:onClick="activity_presupuesto"
 
                 />
             <ImageButton
@@ -75,6 +76,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/agregardinero"
+                android:onClick="activity_agregar_dinero"
 
                 />
             <ImageButton
@@ -99,7 +101,8 @@
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/obejtivodeahorro" />
+                app:srcCompat="@drawable/obejtivodeahorro"
+                android:onClick="activity_objetivo_ahorro"/>
             <ImageButton
                 android:id="@+id/Etiquetas"
                 android:layout_width="wrap_content"
