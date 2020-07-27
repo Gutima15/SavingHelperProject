@@ -51,6 +51,9 @@
         <activity
             android:name=".EtiquetaActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".AgregarDinero"></activity>
+        <activity android:name=".Presupuesto" />
+        <activity android:name=".ObjetivoDeAhorro"/>
     </application>
 
 </manifest>

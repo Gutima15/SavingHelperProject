@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AgregarDinero">
+
+    <TextView
+        android:id="@+id/containerSaldo"
+        android:layout_width="322sp"
+        android:layout_height="156sp"
+        android:layout_marginTop="104sp"
+        android:background="@drawable/fondo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbarAgregarDinero"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="226sp"
+        android:layout_height="61sp"
+        android:clickable="false"
+        android:text="Saldo actual: "
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/containerSaldo"
+        app:layout_constraintEnd_toEndOf="@+id/containerSaldo"
+        app:layout_constraintStart_toStartOf="@+id/containerSaldo"
+        app:layout_constraintTop_toTopOf="@+id/containerSaldo"
+        app:layout_constraintVertical_bias="0.252" />
+
+    <TextView
+        android:id="@+id/lblSaldo"
+        android:layout_width="254sp"
+        android:layout_height="51sp"
+        android:clickable="false"
+        android:text="₡100000"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="@+id/containerSaldo"
+        app:layout_constraintEnd_toEndOf="@+id/containerSaldo"
+        app:layout_constraintStart_toStartOf="@+id/containerSaldo"
+        app:layout_constraintTop_toTopOf="@+id/containerSaldo"
+        app:layout_constraintVertical_bias="0.779" />
+
+
+    <TextView
+        android:id="@+id/lblIndiqueSaldo"
+        android:layout_width="207sp"
+        android:layout_height="39sp"
+        android:layout_marginBottom="35sp"
+        android:text="Por favor ingrese el monto
+que será añadido."
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/txfDineroAAgregar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarAgregarDinero"
+        app:layout_constraintVertical_bias="0.948" />
+
+    <Toolbar
+        android:id="@+id/toolbarAgregarDinero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#003C8F"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0sp">
+
+        <!--agregar on click-->
+        <Button
+            android:id="@+id/btn_agregar_dinero_back"
+            android:layout_width="35sp"
+            android:layout_height="30sp"
+            android:background="@drawable/abc_vector_test" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40sp"
+            android:text="Agregar Dinero"
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            tools:layout_editor_absoluteX="65sp"
+            tools:layout_editor_absoluteY="13sp" />
+
+    </Toolbar>
+
+    <EditText
+        android:id="@+id/txfDineroAAgregar"
+        android:layout_width="207sp"
+        android:layout_height="39sp"
+        android:layout_marginTop="140sp"
+        android:backgroundTint="#003C8F"
+        android:hint="Ingrese el monto"
+        android:inputType="number"
+        android:textColorHint="@color/colorHint"
+        android:textCursorDrawable="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@id/btnCancelarAgregarDinero"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/containerSaldo"
+        app:layout_constraintVertical_bias="0.206" />
+
+    <Button
+        android:id="@+id/btnAceptarAgregarDinero"
+        android:layout_width="120sp"
+        android:layout_height="37sp"
+        android:layout_marginStart="58dp"
+        android:layout_marginEnd="54dp"
+        android:background="@drawable/fondo_botones_celeste"
+        android:fontFamily="sans-serif"
+        android:text="Aceptar"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnCancelarAgregarDinero"
+        app:layout_constraintTop_toTopOf="@+id/btnCancelarAgregarDinero" />
+
+    <Button
+        android:id="@+id/btnCancelarAgregarDinero"
+        android:layout_width="120sp"
+        android:layout_height="37sp"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="468dp"
+        android:layout_marginEnd="58dp"
+        android:background="@drawable/fondo_botones_rojo"
+        android:fontFamily="sans-serif"
+        android:text="Cancelar"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnAceptarAgregarDinero"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarAgregarDinero"
+        app:layout_constraintVertical_bias="0.052" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ObjetivoDeAhorro">
+
+    <Toolbar
+        android:id="@+id/toolbarObjetivoAhorro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#003C8F"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0sp">
+
+        <!--agregar on click-->
+        <Button
+            android:id="@+id/btn_objetivo_ahorro_back"
+            android:layout_width="35sp"
+            android:layout_height="30sp"
+            android:background="@drawable/abc_vector_test" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40sp"
+            android:text="Objetivo de ahorro"
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            tools:layout_editor_absoluteX="65sp"
+            tools:layout_editor_absoluteY="13sp"/>
+    </Toolbar>
+
+
+    <TextView
+        android:id="@+id/containterObjetivoActual"
+        android:layout_width="322sp"
+        android:layout_height="156sp"
+        android:layout_marginBottom="436sp"
+        android:layout_marginTop="50sp"
+        android:background="@drawable/fondo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarObjetivoAhorro"
+        app:layout_constraintVertical_bias="0.493" />
+
+    <TextView
+        android:id="@+id/lblObjetivoActual"
+        android:layout_width="226sp"
+        android:layout_height="61sp"
+        android:layout_marginTop="16sp"
+        android:clickable="false"
+        android:text="Objetivo actual:"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/containterObjetivoActual"
+        app:layout_constraintEnd_toEndOf="@+id/containterObjetivoActual"
+        app:layout_constraintStart_toStartOf="@+id/containterObjetivoActual"
+        app:layout_constraintTop_toTopOf="@+id/containterObjetivoActual"
+        app:layout_constraintVertical_bias="0.0"/>
+
+    <TextView
+        android:id="@+id/lblValorObjetivo"
+        android:layout_width="254sp"
+        android:layout_height="51sp"
+        android:clickable="false"
+        android:text="₡100000"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="@+id/containterObjetivoActual"
+        app:layout_constraintEnd_toEndOf="@+id/containterObjetivoActual"
+        app:layout_constraintStart_toStartOf="@+id/containterObjetivoActual"
+        app:layout_constraintTop_toTopOf="@+id/containterObjetivoActual"
+        app:layout_constraintVertical_bias="0.552"/>
+
+    <Button
+        android:id="@+id/btnCambiarObjetivoAhorro"
+        android:layout_width="162sp"
+        android:layout_height="59sp"
+        android:layout_marginBottom="288sp"
+        android:background="@drawable/fondo"
+        android:fontFamily="sans-serif"
+        android:text="Cambiar"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/containterObjetivoActual"
+        app:layout_constraintVertical_bias="0.232" />
+
+    <TextView
+        android:id="@+id/containterProgresoActual"
+        android:layout_width="322sp"
+        android:layout_height="156sp"
+        android:layout_marginBottom="112sp"
+        android:background="@drawable/fondo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCambiarObjetivoAhorro"
+        app:layout_constraintVertical_bias="0.376" />
+
+    <TextView
+        android:id="@+id/lblProgresoActual"
+        android:layout_width="226sp"
+        android:layout_height="61sp"
+        android:layout_marginTop="16sp"
+        android:clickable="false"
+        android:text="Progreso actual:"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/containterProgresoActual"
+        app:layout_constraintEnd_toEndOf="@+id/containterProgresoActual"
+        app:layout_constraintStart_toStartOf="@+id/containterProgresoActual"
+        app:layout_constraintTop_toTopOf="@+id/containterProgresoActual"
+        app:layout_constraintVertical_bias="0.0"/>
+
+    <TextView
+        android:id="@+id/lblValorProgresoObjetivo"
+        android:layout_width="254sp"
+        android:layout_height="51sp"
+        android:clickable="false"
+        android:text="₡25"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="@+id/containterProgresoActual"
+        app:layout_constraintEnd_toEndOf="@+id/containterProgresoActual"
+        app:layout_constraintStart_toStartOf="@+id/containterProgresoActual"
+        app:layout_constraintTop_toTopOf="@+id/containterProgresoActual"
+        app:layout_constraintVertical_bias="0.552"/>
+
+    <Button
+        android:id="@+id/btnVerDetallesAhorro"
+        android:layout_width="162sp"
+        android:layout_height="59sp"
+        android:layout_marginBottom="56sp"
+        android:background="@drawable/fondo"
+        android:fontFamily="sans-serif"
+        android:text="Ver detalles"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/containterProgresoActual"
+        app:layout_constraintVertical_bias="0.553" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
