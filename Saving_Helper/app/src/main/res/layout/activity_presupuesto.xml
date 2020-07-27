@@ -122,8 +122,9 @@
         <Button
             android:id="@+id/btn_presupuesto_back"
             android:layout_width="35sp"
-            android:layout_height="30sp"
-            android:background="@drawable/abc_vector_test" />
+            android:layout_height="35sp"
+            android:background="@android:drawable/ic_dialog_dialer"
+            android:onClick="activity_menu_con_iconos"/>
 
         <TextView
             android:layout_width="wrap_content"
