@@ -40,7 +40,7 @@ public class ObjetivoDeAhorro extends AppCompatActivity {
 
     private void createNuevoObjetivoDialog() {
         dialogBuilder = new AlertDialog.Builder(this);
-        final View CambiarObjetivo = getLayoutInflater().inflate(R.layout.presupuesto_popup, null);
+        final View CambiarObjetivo = getLayoutInflater().inflate(R.layout.objetivo_de_ahorro_popup, null);
         final TextView label = findViewById(R.id.lblValorObjetivo);
         txfNuevoObjetivo = (EditText) CambiarObjetivo.findViewById(R.id.txfNuevoObjetivo);
 
@@ -55,18 +55,26 @@ public class ObjetivoDeAhorro extends AppCompatActivity {
         btnNuevoObjetivoAceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int value = Integer.parseInt(txfNuevoObjetivo.getText().toString());
-                if(value > 0){
-                    //envia el valor a la base de datos
-                    String toLabel = "₡" + value;
-                    label.setText(toLabel);
-                    dialog.dismiss();
+                if(!txfNuevoObjetivo.getText().toString().equals("")){
+                    int value = Integer.parseInt(txfNuevoObjetivo.getText().toString());
+                    if(value > 0){
+                        //envia el valor a la base de datos
+                        String toLabel = "₡" + value;
+                        label.setText(toLabel);
+                        dialog.dismiss();
+                    }
+                    else{
+                        Toast toast = Toast.makeText(getApplicationContext(), "Ingrese un valor mayor a 0", Toast.LENGTH_LONG);
+                        toast.show();
+                        toast.setGravity(Gravity.BOTTOM|Gravity.CENTER, 0, 300);
+                    }
                 }
                 else{
-                    Toast toast = Toast.makeText(getApplicationContext(), "Ingrese un valor mayor a 0", Toast.LENGTH_LONG);
+                    Toast toast = Toast.makeText(getApplicationContext(), "Ingrese un valor", Toast.LENGTH_LONG);
                     toast.show();
                     toast.setGravity(Gravity.BOTTOM|Gravity.CENTER, 0, 300);
                 }
+
             }
         });
 
