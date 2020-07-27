@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300sp"
+    android:layout_height="225sp"
+    android:minHeight="225sp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/txfNuevoObjetivo"
+        android:layout_width="231sp"
+        android:layout_height="43sp"
+        android:backgroundTint="#003C8F"
+        android:textCursorDrawable="@android:color/black"
+        android:inputType="number"
+        android:hint="Ingrese valor"
+        android:textAlignment="center"
+        android:textColorHint="@color/colorHint"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.431" />
+
+
+    <Button
+        android:id="@+id/btnNuevoObjetivoCancel"
+        android:layout_width="120sp"
+        android:layout_height="37sp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/fondo_botones_rojo"
+        android:text="Cancelar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnNuevoObjetivoAceptar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txfNuevoObjetivo"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btnNuevoObjetivoAceptar"
+        android:layout_width="120sp"
+        android:layout_height="37sp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/fondo_botones_celeste"
+        android:text="Aceptar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnNuevoObjetivoCancel"
+        app:layout_constraintTop_toBottomOf="@+id/txfNuevoObjetivo"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Toolbar
+        android:id="@+id/toolbarNuevoObjetivo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#003C8F"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0sp">
+
+        <!--agregar on click-->
+        <Button
+            android:id="@+id/btn_cambiar_objetivo_back"
+            android:layout_width="35sp"
+            android:layout_height="30sp"
+            android:background="@drawable/abc_vector_test" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40sp"
+            android:text="Cambiar objetivo"
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            tools:layout_editor_absoluteX="65sp"
+            tools:layout_editor_absoluteY="13sp" />
+
+    </Toolbar>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
