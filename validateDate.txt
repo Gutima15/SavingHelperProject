@@ -1,0 +1,33 @@
+def validarFecha(pfecha):
+    """
+    F: Valida la fecha ingresada dentro del calendario conocido
+    E: pfecha(string) cadena de texto que contiene la fecha del contacto a validar
+    S: True si cumple con el formato, o el mensaje respectivo si no.
+    """
+    hoy = date.today()#Día actual
+    diaActual = hoy.day #dia tipo int
+    mesActual = hoy.month #mes tipo int
+    annoActual = hoy.year
+    digFecha = pfecha.split("/")    
+    if len(digFecha[0])!= 2 or len(digFecha[1])!= 2:
+        return "El día debe ser de dos dígitos"
+    elif int(digFecha[2]) > annoActual or int(digFecha[2]) < 1920:
+        return "En promedio, las personas no viven más de 75 años. Ni vienen del futuro."
+    if int(digFecha[2]) == annoActual:
+        if int(digFecha[1]) > mesActual:
+            return "Por favor ingrese una fecha menor a la actual."
+        elif int(digFecha[1]) == mesActual:
+            if int(digFecha[0]) > diaActual:
+                return "Por favor ingrese una fecha menor a la actual."
+    m = int(digFecha[1])
+    d = int(digFecha[0])
+    #Array que almacenara los dias que tiene cada mes (si el ano es bisiesto, sumaremos +1 al febrero)
+    dias_mes = [31, 28, 31, 30,31, 30, 31, 31, 30, 31, 30, 31]
+    #Comprobar si el ano es bisiesto y anadir dia en febrero en caso afirmativo
+    if int(digFecha[2])%4 == 0:
+        dias_mes[1] += 1
+    #Comprobar que el dia sea valido
+    m -= 1
+    if(d <= 0 or d > dias_mes[m]):
+        return "El dia no es válido en el mes y año indicado."           
+    return True
