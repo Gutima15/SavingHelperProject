@@ -25,7 +25,7 @@
             android:name=".RegistroActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
         </activity>
-        <activity  android:name=".Login" android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity  android:name=".Login" android:theme="@style/Theme.AppCompat.Light.NoActionBar">        
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -47,6 +47,10 @@
         <activity
             android:name=".MenuConIconos"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+    <activity android:name=".PopUpEtiquetaActivity"></activity>
+        <activity
+            android:name=".EtiquetaActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">/>
     </application>
 
 </manifest>

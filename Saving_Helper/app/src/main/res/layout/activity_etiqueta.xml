@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EtiquetaActivity">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="#003C8F">
+
+
+        <Button
+            android:id="@+id/btn_Estadistica_back"
+            android:layout_width="25sp"
+            android:layout_height="23sp"
+            android:background="@android:drawable/ic_dialog_dialer"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40sp"
+            android:text="Etiquetas"
+            android:textColor="@android:color/white"
+            android:textSize="22sp" />
+
+    </Toolbar>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="15sp"
+        >
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="450sp"
+            />
+
+        <Button
+            android:id="@+id/button_PopUpEtiqueta_Agregar"
+            android:layout_below="@+id/listView"
+            android:layout_toRightOf="@+id/button_PopUpEtiqueta_Cancelar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25sp"
+            android:layout_width="100sp"
+            android:layout_height="45sp"
+            android:text="Agregar"
+            android:textColor="@android:color/white"
+            android:backgroundTint="#003C8F"
+            android:onClick="OnClickAgregar"/>
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
