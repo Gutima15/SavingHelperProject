@@ -4,10 +4,13 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class Presupuesto extends AppCompatActivity {
 
@@ -19,9 +22,10 @@ public class Presupuesto extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        /*CONTEMPLAR LA CARGA DESDE LA BASE DE DATOS*/
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_presupuesto);
-        this.setTitle("Presupuesto");
+
         final Button btnCambiarPresupuesto = findViewById(R.id.btnCambiarPresupuesto);
         btnCambiarPresupuesto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +45,7 @@ public class Presupuesto extends AppCompatActivity {
     public void createNuevoPresupuestoDialog(){
         dialogBuilder = new AlertDialog.Builder(this);
         final View CambiarPresupuesto = getLayoutInflater().inflate(R.layout.presupuesto_popup, null);
+        final TextView label = findViewById(R.id.lblPresupuesto);
         txfNuevoPresupuesto = (EditText) CambiarPresupuesto.findViewById(R.id.txfNuevoPresupuesto);
 
         btnNuevoPresupuestoAceptar = (Button) CambiarPresupuesto.findViewById(R.id.nuevoPresupuestoAceptar);
@@ -54,9 +59,18 @@ public class Presupuesto extends AppCompatActivity {
         btnNuevoPresupuestoAceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //aqui va el codigo del aceptar
-                //valida
-                //luego envia a la base de datos
+                int value = Integer.parseInt(txfNuevoPresupuesto.getText().toString());
+                if(value > 0){
+                    //envia el valor a la base de datos
+                    String toLabel = "₡" + value;
+                    label.setText(toLabel);
+                    dialog.dismiss();
+                }
+                else{
+                    Toast toast = Toast.makeText(getApplicationContext(), "Ingrese un valor mayor a 0", Toast.LENGTH_LONG);
+                    toast.show();
+                    toast.setGravity(Gravity.BOTTOM|Gravity.CENTER, 0, 300);
+                }
             }
         });
 
@@ -76,8 +90,12 @@ public class Presupuesto extends AppCompatActivity {
     }
 
     public void createPresupuestoCambiarPeriodoDialog(){
+
+        /*CONTEMPLAR CARGA DESDE DB CUAL ES EL TIPO*/
+
         dialogBuilder = new AlertDialog.Builder(this);
         final View CambiarPeriodo = getLayoutInflater().inflate(R.layout.presupuesto_cambiar_periodo, null);
+        final TextView lblTipoPeriodo = findViewById(R.id.lblTipoPeriodo);
 
         btn_aceptar_cambio_periodo = (Button) CambiarPeriodo.findViewById(R.id.btn_aceptar_cambio_periodo);
         btn_cancelar_cambio_periodo = (Button) CambiarPeriodo.findViewById(R.id.btn_cancelar_cambio_periodo);
@@ -94,9 +112,17 @@ public class Presupuesto extends AppCompatActivity {
         btn_aceptar_cambio_periodo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //aqui va el codigo del aceptar
-                //valida
-                //luego envia a la base de datos
+                if(rbtn_semanal.isChecked()){
+                    lblTipoPeriodo.setText(rbtn_semanal.getText());
+                }
+                else if(rbtn_quincenal.isChecked()){
+                    lblTipoPeriodo.setText(rbtn_quincenal.getText());
+                }
+                else if(rbtn_mensual.isChecked()){
+                    lblTipoPeriodo.setText(rbtn_mensual.getText());
+                }
+                /*ENVIAR A LA BASE DE DATOS*/
+                dialog.dismiss();
             }
         });
 

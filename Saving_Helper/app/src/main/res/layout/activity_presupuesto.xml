@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Presupuesto">
-
+    
     <TextView
         android:id="@+id/containerPresupuesto"
         android:layout_width="322sp"
@@ -37,13 +37,13 @@
 
     <TextView
         android:id="@+id/lblPresupuesto"
-        android:layout_width="256sp"
-        android:layout_height="37sp"
+        android:layout_width="254sp"
+        android:layout_height="51sp"
         android:clickable="false"
         android:text="₡100000"
         android:textAlignment="center"
         android:textColor="@android:color/white"
-        android:textSize="24sp"
+        android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="@+id/containerPresupuesto"
         app:layout_constraintEnd_toEndOf="@+id/containerPresupuesto"
         app:layout_constraintStart_toStartOf="@+id/containerPresupuesto"
@@ -133,7 +133,7 @@
             android:textColor="@android:color/white"
             android:textSize="22sp"
             tools:layout_editor_absoluteX="65sp"
-            tools:layout_editor_absoluteY="13sp" />
+            tools:layout_editor_absoluteY="13sp"/>
 
     </Toolbar>
 
