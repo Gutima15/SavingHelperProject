@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.saving_helper.Utiles.Singleton;
+
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -36,6 +38,9 @@ public class Login extends AppCompatActivity {
         EditText usuario = findViewById(R.id.nombreUsuario);
         EditText contra = findViewById(R.id.contraseña);
         if (validarIngreso(usuario, contra)){
+            Singleton singleUser = Singleton.getInstance();
+            singleUser.setDatos(usuario.getText().toString(),contra.getText().toString());
+            singleUser.setId();
             Intent intent = new Intent(this, PantallaInicio.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
