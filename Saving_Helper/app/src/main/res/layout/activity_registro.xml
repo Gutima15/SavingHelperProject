@@ -170,19 +170,19 @@
         android:layout_width="123sp"
         android:layout_height="wrap_content"
         android:layout_marginStart="155sp"
-        android:layout_marginTop="48sp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="155sp"
-        android:layout_marginBottom="100sp"
+        android:layout_marginBottom="47dp"
         android:backgroundTint="@color/colorPrimary"
         android:fontFamily="sans-serif"
+        android:onClick="pruebaC"
         android:text="Entrar"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contraseña"
-        android:onClick="pruebaC"/>
+        app:layout_constraintTop_toBottomOf="@+id/contraseñaInicial" />
 
     <Toolbar
         android:id="@+id/toolbarRegistro"

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#EFE0E0">
+
+        <TextView
+            android:id="@+id/textView_Nombre"
+            android:padding="8sp"
+            android:layout_width="140sp"
+            android:layout_height="40sp"
+            android:text="Taxi"
+            android:layout_marginStart="5sp"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/textView_Monto"
+            android:padding="8sp"
+            android:layout_toRightOf="@+id/textView_Nombre"
+            android:layout_width="100sp"
+            android:layout_height="40sp"
+            android:text="₡5000 "
+            android:layout_marginStart="25sp"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/textView_Fecha"
+            android:padding="8sp"
+            android:layout_toRightOf="@+id/textView_Monto"
+            android:layout_width="110sp"
+            android:layout_height="35sp"
+            android:text="25/16/3030 "
+            android:layout_marginStart="25sp"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            />
+
+    </RelativeLayout>
+
+</LinearLayout>

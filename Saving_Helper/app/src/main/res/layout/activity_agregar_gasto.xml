@@ -19,8 +19,8 @@
             android:id="@+id/btn_menu_back"
             android:layout_width="35sp"
             android:layout_height="39sp"
-            android:background="@android:drawable/ic_dialog_dialer" />
-        <!---android:onClick="toMenu"-->
+            android:background="@android:drawable/ic_dialog_dialer"
+            android:onClick="activity_menu_con_iconos"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -51,44 +51,47 @@
         android:layout_width="254sp"
         android:layout_height="43sp"
         android:layout_marginStart="67sp"
+        android:layout_marginTop="13dp"
         android:layout_marginEnd="90sp"
         android:ems="10"
         android:hint="Ingrese el nombre del gasto"
+        android:imeOptions="actionNext"
         android:inputType="textPersonName"
         android:textColor="@color/colorPrimary"
         android:textColorHint="@color/colorHint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="331sp"
-        android:imeOptions="actionNext"/>
+        app:layout_constraintTop_toBottomOf="@+id/labelNombreGasto2" />
 
     <EditText
         android:id="@+id/monto2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="67sp"
+        android:layout_marginTop="14dp"
         android:layout_marginEnd="134sp"
         android:ems="10"
         android:hint="Ingrese el monto"
+        android:imeOptions="actionDone"
         android:inputType="textPersonName"
         android:textColor="@color/colorPrimary"
         android:textColorHint="@color/colorHint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="423sp"
-        android:imeOptions="actionDone"/>
+        app:layout_constraintTop_toBottomOf="@+id/labelMonto2" />
 
     <Spinner
         android:id="@+id/etiquetasDropDown2"
         android:layout_width="254sp"
         android:layout_height="49sp"
         android:layout_marginStart="67sp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="90sp"
         android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="517sp" />
+        app:layout_constraintTop_toBottomOf="@+id/labelEtiquetasDropDown2" />
 
     <Button
         android:id="@+id/botonEntrar5"
@@ -101,7 +104,8 @@
         android:text="Cancelar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contraseñaVerificacion" />
+        app:layout_constraintTop_toBottomOf="@+id/contraseñaVerificacion"
+        android:onClick="activity_pantalla_inicio"/>
 
     <Button
         android:id="@+id/botonEntrar6"
@@ -137,26 +141,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50sp"
+        android:layout_marginTop="14dp"
         android:layout_marginEnd="315sp"
         android:text="Monto"
         android:textColor="@color/colorPrimary"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="389sp" />
+        app:layout_constraintTop_toBottomOf="@+id/nombreGasto2" />
 
     <TextView
         android:id="@+id/labelEtiquetasDropDown2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48sp"
+        android:layout_marginTop="14dp"
         android:layout_marginEnd="224sp"
         android:text="Seleccione etiqueta"
         android:textColor="@color/colorPrimary"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="483sp" />
+        app:layout_constraintTop_toBottomOf="@+id/monto2" />
 
     <TextView
         android:id="@+id/saldoDisponible2"
