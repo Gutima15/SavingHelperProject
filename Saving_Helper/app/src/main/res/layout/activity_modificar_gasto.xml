@@ -199,11 +199,14 @@
         android:id="@+id/labelSaldoDisponible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40sp"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="41dp"
         android:text="Saldo disponible"
         android:textColor="@android:color/white"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarRegistro3" />
 </androidx.constraintlayout.widget.ConstraintLayout>
