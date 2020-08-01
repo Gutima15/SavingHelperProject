@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetalleEtiquetaActivity">
+
+    <Toolbar
+        android:id="@+id/toolbar_DetalleEtiqueta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#003C8F"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <Button
+            android:id="@+id/btn_DetalleEtiqueta_back"
+            android:layout_width="35sp"
+            android:layout_height="30sp"
+            android:background="@drawable/abc_vector_test"
+            android:onClick="onClickBack" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40sp"
+            android:text="Detalle de la etiqueta"
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            tools:layout_editor_absoluteX="65sp"
+            tools:layout_editor_absoluteY="13sp" />
+
+    </Toolbar>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar_DetalleEtiqueta">
+
+        <TextView
+            android:id="@+id/textView_DetalleEtiqueta_NombreEtiqueta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="22sp"
+            android:text="Nombre de la etiqueta"
+            android:textSize="22sp"
+            android:textColor="@android:color/black"/>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout_DetalleEtiqueta_btnAgregar"
+            android:layout_below="@id/textView_DetalleEtiqueta_NombreEtiqueta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25sp"
+            android:layout_marginStart="55sp"
+
+            >
+
+            <Button
+                android:id="@+id/btn_DetalleEtiqueta_AgregarGasto"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:layout_marginStart="25sp"
+                android:background="@drawable/ic_add"
+                />
+
+            <TextView
+                android:id="@+id/textView_DetalleEtiqueta_AgregarGasto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_DetalleEtiqueta_AgregarGasto"
+                android:layout_marginTop="3sp"
+                android:text="Agregar gasto"
+                android:textSize="16sp"
+                android:textColor="#003C8F"/>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout_DetalleEtiqueta_btnEliminar"
+            android:layout_below="@id/textView_DetalleEtiqueta_NombreEtiqueta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25sp"
+            android:layout_marginStart="200sp"
+
+
+            >
+
+            <Button
+                android:id="@+id/btn_DetalleEtiqueta_EliminarGasto"
+                android:layout_width="50sp"
+                android:layout_height="50sp"
+                android:layout_marginStart="25sp"
+                android:background="@drawable/ic_delete"
+                android:onClick="onClickEliminar"
+
+                />
+
+            <TextView
+                android:id="@+id/textView_DetalleEtiqueta_EliminarGasto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_DetalleEtiqueta_EliminarGasto"
+                android:layout_marginTop="3sp"
+                android:text="Eliminar etiqueta"
+                android:textSize="16sp"
+                android:textColor="#003C8F"/>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+
+            android:id="@+id/relativeLayout_DetalleEtiqueta_ListaGsto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/relativeLayout_DetalleEtiqueta_btnAgregar">
+            <TextView
+                android:id="@+id/textView_DetalleEtiqueta_ListaGastos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="22sp"
+                android:text="Lista de gastos"
+                android:textSize="22sp"
+                android:textColor="@android:color/black"/>
+
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView_DetalleEtiqueta_ListaGastos"
+                android:layout_marginTop="15sp"
+                android:layout_marginBottom="5sp">
+
+                <ListView
+                    android:id="@+id/listView_DetalleEtiqueta_Gastos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -57,7 +57,7 @@ public class PopUpEtiquetaActivity extends AppCompatDialogFragment {
             public void onClick(View view) {
 
                 if(datosCorrectos()){
-                    listener.agregarEtiqueta(colorSeleccionado,editText_Nombre.getText().toString());
+                    listener.agregarEtiqueta(editText_Nombre.getText().toString(),colorSeleccionado);
                     getDialog().dismiss();
                 }
                 else {

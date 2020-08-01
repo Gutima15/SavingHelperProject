@@ -1,7 +1,10 @@
 package com.example.saving_helper.Utiles;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,10 +13,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.saving_helper.DetalleEtiquetaActivity;
+import com.example.saving_helper.MenuConIconos;
 import com.example.saving_helper.Objetos.Etiqueta;
 import com.example.saving_helper.Objetos.Gasto;
 import com.example.saving_helper.R;
@@ -34,7 +40,7 @@ public class EtiquetaListAdapter extends ArrayAdapter<Etiqueta> {
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+    public View getView(final int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         String nombre = getItem(position).getNombre();
         String color = getItem(position).getColor();
         ArrayList<Gasto> gastos = getItem(position).getGastos();
@@ -47,9 +53,15 @@ public class EtiquetaListAdapter extends ArrayAdapter<Etiqueta> {
         ImageView image_Etiqueta = (ImageView) convertView.findViewById(R.id.image_Etiqueta);
         ListView listView_Gastos = (ListView) convertView.findViewById(R.id.listView_Gastos);
 
+        image_Etiqueta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), DetalleEtiquetaActivity.class);
+                intent.putExtra("Etiqueta",getItem(position));
+                 mContext.startActivity(intent);
 
-
-
+            }
+        });
 
         textView_Nombre.setText(nombre);
         image_Etiqueta.setColorFilter(Color.parseColor(color));
