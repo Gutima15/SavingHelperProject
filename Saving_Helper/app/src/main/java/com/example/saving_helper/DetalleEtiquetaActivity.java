@@ -53,15 +53,12 @@ public class DetalleEtiquetaActivity extends AppCompatActivity {
             Gasto gasto = new Gasto();
             etiqueta.getGastos().add(0,gasto);
 
-            DetallesListAdapter adapter = new DetallesListAdapter(getApplicationContext(), R.layout.layout_lista_gastos,etiqueta.getGastos());
+            DetallesListAdapter adapter = new DetallesListAdapter(getApplicationContext(), R.layout.layout_lista_gastos,etiqueta.getGastos(),etiqueta.getNombre());
             listView_ListaGastos.setAdapter(adapter);
         }
         else {
             relativeLayout_ListaGastos.setAlpha(0);
         }
-
-
-
 
     }
 
@@ -114,8 +111,11 @@ public class DetalleEtiquetaActivity extends AppCompatActivity {
 
     }
 
-    public void OnClickEliminarGasto(int posicionGasto){
-
+    public void onClickAgregarGasto(View v){
+        Intent intent = new Intent(this, AgregarGastoActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.putExtra("EtiquetaActual",etiqueta.getNombre());
+        startActivity(intent);
     }
 
 }
