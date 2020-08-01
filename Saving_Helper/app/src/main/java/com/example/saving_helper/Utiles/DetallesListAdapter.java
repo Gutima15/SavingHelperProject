@@ -1,7 +1,9 @@
 package com.example.saving_helper.Utiles;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
+import android.os.StrictMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +16,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.saving_helper.DetalleEtiquetaActivity;
+import com.example.saving_helper.MenuConIconos;
+import com.example.saving_helper.ModificarGastoActivity;
+import com.example.saving_helper.ModificarInfoUsuarioActivity;
 import com.example.saving_helper.Objetos.Gasto;
 import com.example.saving_helper.R;
 
@@ -23,11 +28,13 @@ import java.util.ArrayList;
 public class DetallesListAdapter extends ArrayAdapter<Gasto> {
     private Context mContext;
     private int mResource;
+    private String etiqueta;
 
-    public DetallesListAdapter(@NonNull Context context, int resource, @NonNull ArrayList<Gasto> objects) {
+    public DetallesListAdapter(@NonNull Context context, int resource, @NonNull ArrayList<Gasto> objects, String etiquetaActual) {
         super(context, resource, objects);
         mContext = context;
         mResource = resource;
+        etiqueta = etiquetaActual;
     }
 
 
@@ -58,7 +65,11 @@ public class DetallesListAdapter extends ArrayAdapter<Gasto> {
                 @Override
                 public void onClick(View view) {
                     //Falta agregar salto a la otra vista
-                    Toast.makeText(getContext(),"Nomber: "+ getItem(position).getNombre(),Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getContext(), ModificarGastoActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.putExtra("EtiquetaActual",etiqueta);
+                    intent.putExtra("gasto",getItem(position));
+                    mContext.startActivity(intent);
                 }
             });
 
@@ -73,19 +84,6 @@ public class DetallesListAdapter extends ArrayAdapter<Gasto> {
             textView_Fecha.setTextColor(Color.parseColor("#003C8F"));
             btn_Editar.setAlpha(0);
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         return convertView;
     }

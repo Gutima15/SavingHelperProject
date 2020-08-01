@@ -67,6 +67,7 @@
                 android:layout_height="50sp"
                 android:layout_marginStart="25sp"
                 android:background="@drawable/ic_add"
+                android:onClick="onClickAgregarGasto"
                 />
 
             <TextView

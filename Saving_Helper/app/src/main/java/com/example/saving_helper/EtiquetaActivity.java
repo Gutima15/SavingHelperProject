@@ -136,14 +136,11 @@ public class EtiquetaActivity extends AppCompatActivity implements PopUpEtiqueta
                     int i = etiquetas.indexOf(nuevaEtiqueta);
                     etiquetas.get(i).getGastos().add(nuevoGasto);
                 }
-
-
             }
+            con.close();
         } catch (SQLException e) {
             Log.d("Chompipe",e.toString());
         }
-
-
     }
 
 
