@@ -11,7 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#FFFFFF"
-        >
+        tools:layout_editor_absoluteX="-49dp"
+        tools:layout_editor_absoluteY="0dp">
+
         <Toolbar
             android:id="@+id/toolbarPantallaInicio"
             android:layout_width="match_parent"
@@ -26,8 +28,7 @@
                 android:layout_width="25sp"
                 android:layout_height="23sp"
                 android:background="@android:drawable/ic_dialog_dialer"
-                android:onClick="activity_menu_con_iconos"
-                />
+                android:onClick="activity_menu_con_iconos" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -44,14 +45,14 @@
             android:layout_width="100sp"
             android:layout_height="wrap_content"
             android:layout_marginStart="50sp"
-            android:layout_marginTop="250sp"
+            android:layout_marginTop="600sp"
             android:backgroundTint="@color/colorAccent"
+            android:onClick="openAgregarGasto"
             android:text="Agregar gasto"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            android:onClick="openAgregarGasto"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
@@ -60,7 +61,7 @@
             android:layout_width="100sp"
             android:layout_height="wrap_content"
             android:layout_marginStart="250sp"
-            android:layout_marginTop="250sp"
+            android:layout_marginTop="600sp"
             android:backgroundTint="@color/colorPrimaryDark"
             android:text="Agregar dinero"
             android:textStyle="bold"
@@ -71,53 +72,100 @@
 
         <RelativeLayout
             android:id="@+id/SaldoDisponibleBackground"
-            android:layout_width="150sp"
-            android:layout_height="150sp"
-            android:background="@drawable/redondo"
-            android:layout_marginStart="25sp"
+            android:layout_width="300sp"
+            android:layout_height="200sp"
+            android:layout_marginStart="50sp"
             android:layout_marginTop="90sp"
-            >
+            android:background="@drawable/fondo">
+
+            <TextView
+                android:id="@+id/SaldoDisponibleMonto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/SaldoDisponible"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="99dp"
+                android:layout_marginTop="38dp"
+                android:layout_marginEnd="96dp"
+                android:layout_marginBottom="50dp"
+                android:text="¢50500"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/SaldoDisponible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="38dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="36dp"
+                android:text="Saldo disponible"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </RelativeLayout>
 
-        <TextView
-            android:id="@+id/SaldoDisponible"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="45sp"
-            android:layout_marginTop="125sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:text="Saldo disponible:"
-            android:textColor="#FFFFFF"
-            />
         <RelativeLayout
             android:id="@+id/AhorroDiarioBackground"
-            android:layout_width="150sp"
-            android:layout_height="150sp"
-            android:background="@drawable/redondo"
-            android:layout_marginStart="225sp"
-            android:layout_marginTop="90sp"
-            >
+            android:layout_width="300sp"
+            android:layout_height="200sp"
+            android:layout_marginStart="50sp"
+            android:layout_marginTop="320sp"
+            android:background="@drawable/fondo">
+
+            <TextView
+                android:id="@+id/AhorroDiarioMonto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="76dp"
+                android:layout_marginTop="102dp"
+                android:layout_marginEnd="76dp"
+                android:layout_marginBottom="58dp"
+                android:text="¢7250.2"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </RelativeLayout>
+
         <TextView
             android:id="@+id/AhorroDiario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="255sp"
-            android:layout_marginTop="125sp"
+            android:layout_alignStart="@+id/AhorroDiarioBackground"
+            android:layout_alignTop="@+id/AhorroDiarioBackground"
+            android:layout_alignEnd="@+id/AhorroDiarioBackground"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="62dp"
+            android:text="Ahorro diario"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
             android:textStyle="bold"
-
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:text="Ahorro diario: "
-            android:textColor="#FFFFFF"
-            />
-
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </RelativeLayout>
