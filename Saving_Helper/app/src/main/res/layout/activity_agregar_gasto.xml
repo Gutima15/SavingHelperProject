@@ -35,16 +35,15 @@
 
     <ImageView
         android:id="@+id/circuloDeFondoAgregar2"
-        android:layout_width="313sp"
-        android:layout_height="213sp"
-        android:layout_marginStart="50sp"
-        android:layout_marginTop="16sp"
-        android:layout_marginEnd="48sp"
+        android:layout_width="279dp"
+        android:layout_height="173dp"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="57dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarRegistro3"
-        app:srcCompat="@drawable/redondojorge" />
+        app:srcCompat="@drawable/fondo" />
 
     <EditText
         android:id="@+id/nombreGasto2"
@@ -168,12 +167,23 @@
         android:id="@+id/saldoDisponible2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40sp"
-        android:text="Saldo disponible"
+        android:layout_marginTop="12dp"
+        android:text="Saldo disponible:"
         android:textColor="@android:color/white"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarRegistro3" />
+        app:layout_constraintEnd_toEndOf="@+id/circuloDeFondoAgregar2"
+        app:layout_constraintStart_toStartOf="@+id/circuloDeFondoAgregar2"
+        app:layout_constraintTop_toTopOf="@+id/circuloDeFondoAgregar2" />
+
+    <TextView
+        android:id="@+id/saldoDisponibleAgr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/circuloDeFondoAgregar2"
+        app:layout_constraintEnd_toEndOf="@+id/circuloDeFondoAgregar2"
+        app:layout_constraintStart_toStartOf="@+id/circuloDeFondoAgregar2"
+        app:layout_constraintTop_toTopOf="@+id/circuloDeFondoAgregar2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
