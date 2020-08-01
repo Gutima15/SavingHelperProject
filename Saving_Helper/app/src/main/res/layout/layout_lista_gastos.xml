@@ -7,7 +7,7 @@
         android:id="@+id/relativeLayout_etiquetas_gastos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#EFE0E0">
+        android:background="#FFFFFF">
 
         <TextView
             android:id="@+id/textView_Nombre"
@@ -42,6 +42,18 @@
             android:textColor="#000000"
             android:textSize="16sp"
             />
+
+        <Button
+        android:id="@+id/btn_EditarGasto"
+        android:layout_marginTop="10sp"
+        android:layout_toRightOf="@+id/textView_Nombre"
+        android:layout_width="10sp"
+        android:layout_height="10sp"
+        android:background="@drawable/lapiz"/>
+
+
+
+
 
     </RelativeLayout>
 

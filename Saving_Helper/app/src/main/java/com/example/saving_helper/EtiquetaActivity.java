@@ -9,105 +9,37 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.saving_helper.Objetos.Etiqueta;
 import com.example.saving_helper.Objetos.Gasto;
 import com.example.saving_helper.Utiles.EtiquetaListAdapter;
+import com.example.saving_helper.Utiles.Singleton;
 
+import java.sql.CallableStatement;
+import java.sql.Connection;
 import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class EtiquetaActivity extends AppCompatActivity implements PopUpEtiquetaActivity.PopUpEtiquetasListener {
     private ArrayList<Etiqueta> etiquetas;
-    ListView mListView;
+    private ListView mListView;
+    private Singleton user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_etiqueta);
-
+        user = Singleton.getInstance();
         mListView = findViewById(R.id.listView);
-
-        //Datos de ejemplo
-        Etiqueta transporte = new Etiqueta("Transporte","#DE4646");
-        Etiqueta alimentacion = new Etiqueta("Alimentación","#F8CACA");
-        Etiqueta gastoG = new Etiqueta("Gastos generales","#FDF39E");
-        Etiqueta dormir = new Etiqueta("Dormir","#FF69E853");
-        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-
-
-        Gasto transpote1 = null;
-        Gasto transpote2 = null;
-        Gasto transpote3 = null;
-        Gasto transpote4 = null;
-        Gasto alimentacion1 = null;
-        Gasto alimentacion2 = null;
-        Gasto alimentacion3 = null;
-        Gasto alimentacion4 = null;
-        Gasto gastosG1 = null;
-        Gasto dormir1 = null;
-        try {
-            transpote1 = new Gasto("Taxi",5000, format.parse("26/05/2020"));
-            transpote2 = new Gasto("Uber",4750, format.parse("28/05/2020"));
-            transpote3 = new Gasto("Uber Heredia",7500, format.parse("29/05/2020"));
-
-
-
-            alimentacion1 = new Gasto("Sangu",3500, format.parse("25/05/2020"));
-            alimentacion2 = new Gasto("Sangu",3500, format.parse("28/05/2020"));
-            alimentacion3 = new Gasto("Promo sushi",12000, format.parse("30/05/2020"));
-            alimentacion4 = new Gasto("Villa Italia",10000, format.parse("31/05/2020"));
-
-            gastosG1 = new Gasto("Calculadora científica",13000, format.parse("30/05/2020"));
-
-            dormir1 = new Gasto("El costo de estar en el TEC",22500, format.parse("15/05/2020"));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-
-        ArrayList<Gasto> arrayListTranporte = new ArrayList<Gasto>();
-        arrayListTranporte.add(transpote1);
-        arrayListTranporte.add(transpote2);
-        arrayListTranporte.add(transpote3);
-        transporte.setGastos(arrayListTranporte);
-
-
-
-        ArrayList<Gasto> arrayListAlimentacion = new ArrayList<Gasto>();
-        arrayListAlimentacion.add(alimentacion1);
-        arrayListAlimentacion.add(alimentacion2);
-        arrayListAlimentacion.add(alimentacion3);
-        arrayListAlimentacion.add(alimentacion4);
-        alimentacion.setGastos(arrayListAlimentacion);
-
-
-
-        ArrayList<Gasto> arrayListGastosG = new ArrayList<Gasto>();
-        arrayListGastosG.add(gastosG1);
-
-        gastoG.setGastos(arrayListGastosG);
-
-        ArrayList<Gasto> arrayListDormir = new ArrayList<>();
-        arrayListDormir.add(dormir1);
-
-        dormir.setGastos(arrayListDormir);
-
         etiquetas = new ArrayList<>();
 
-        etiquetas.add(transporte);
-        etiquetas.add(alimentacion);
-        etiquetas.add(gastoG);
-        etiquetas.add(dormir);
-
-
-
-
-
+        cargarEtiquetas();
         actualizarListaEtiquetas(etiquetas);
-
-
 
     }
 
@@ -125,10 +57,47 @@ public class EtiquetaActivity extends AppCompatActivity implements PopUpEtiqueta
 
     @Override
     public void agregarEtiqueta(String nombre, String color) {
-        Etiqueta etiqueta = new Etiqueta(color,nombre);
 
-        this.etiquetas.add(etiqueta);
-        actualizarListaEtiquetas(etiquetas);
+        Boolean success = false;
+        if(etiquetas.contains(new Etiqueta(nombre,color))){
+            Toast.makeText(getApplicationContext(),"Ya existe una etiqueta con ese nombre",Toast.LENGTH_SHORT).show();
+        }
+        else{
+            String SPSQL = "{? = call usp_EtiquetaCreate (?,?,?)}";
+            try{
+                AzureConnection connexion= new AzureConnection();
+                Connection con = connexion.connectionClass();
+                if (con == null){
+                    success = false;
+                }else{
+                    CallableStatement ps = con.prepareCall(SPSQL);
+                    ps.setEscapeProcessing(true);
+                    ps.setQueryTimeout(1000);
+                    ps.registerOutParameter(1, java.sql.Types.INTEGER);
+                    ps.setInt(2,user.ID);
+                    ps.setString(3,color);
+                    ps.setString(4,nombre);
+                    //
+                    ps.execute(); // ->1 / 0
+                    int resultado= ps.getInt(1);
+                    //
+                    if (resultado==0){
+                        success = true;
+                    }else{
+                        success=  false;
+                    }
+                    con.close();
+                }
+            } catch (Exception ex) {
+                Log.d("Chompipe", ex.toString());
+            }
+
+            Etiqueta etiqueta = new Etiqueta(nombre,color);
+
+            this.etiquetas.add(etiqueta);
+            actualizarListaEtiquetas(etiquetas);
+        }
+
 
 
     }
@@ -137,4 +106,45 @@ public class EtiquetaActivity extends AppCompatActivity implements PopUpEtiqueta
         EtiquetaListAdapter adapter = new EtiquetaListAdapter(this, R.layout.layout_etiquetas,etiquetas);
         mListView.setAdapter(adapter);
     }
+
+    public void cargarEtiquetas(){
+        CallableStatement cstmt = null;
+        ResultSet rs = null;
+        String SPsql = "EXEC usp_EtiquetaRead ?";   // for stored proc taking 2 parameters
+        AzureConnection connexion= new AzureConnection();
+        Connection con = connexion.connectionClass();
+        PreparedStatement ps = null;
+        etiquetas = new ArrayList<>();
+        try {
+            ps = con.prepareStatement(SPsql);
+            ps.setEscapeProcessing(true);
+            ps.setQueryTimeout(1000);
+            ps.setInt(1,user.ID);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                String nombreEtiqueta = rs.getString("NombreEtiqueta");
+                String color = rs.getString("ColorHex");
+                Float montoGasto = rs.getFloat("MontoGasto");
+                Etiqueta nuevaEtiqueta = new Etiqueta(nombreEtiqueta,color);
+
+                if(!etiquetas.contains(nuevaEtiqueta)){
+                    etiquetas.add(nuevaEtiqueta);
+                }
+                if(montoGasto != -1 ){
+                    Gasto nuevoGasto = new Gasto(rs.getString("NombreGasto"),montoGasto,rs.getDate("Fecha"));
+                    int i = etiquetas.indexOf(nuevaEtiqueta);
+                    etiquetas.get(i).getGastos().add(nuevoGasto);
+                }
+
+
+            }
+        } catch (SQLException e) {
+            Log.d("Chompipe",e.toString());
+        }
+
+
+    }
+
+
 }
