@@ -6,13 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".ObjetivoDeAhorro">
 
+
     <Toolbar
         android:id="@+id/toolbarObjetivoAhorro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#003C8F"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0sp">
+        tools:layout_editor_absoluteX="0dp">
 
         <!--agregar on click-->
         <Button
@@ -20,7 +21,7 @@
             android:layout_width="35sp"
             android:layout_height="39sp"
             android:background="@android:drawable/ic_dialog_dialer"
-            android:onClick="activity_menu_con_iconos"/>
+            android:onClick="activity_menu_con_iconos" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -30,9 +31,8 @@
             android:textColor="@android:color/white"
             android:textSize="22sp"
             tools:layout_editor_absoluteX="65sp"
-            tools:layout_editor_absoluteY="13sp"/>
+            tools:layout_editor_absoluteY="13sp" />
     </Toolbar>
-
 
     <TextView
         android:id="@+id/containterObjetivoActual"

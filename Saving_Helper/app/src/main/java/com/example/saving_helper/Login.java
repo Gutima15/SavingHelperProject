@@ -51,7 +51,7 @@ public class Login extends AppCompatActivity {
         }
     }
     public boolean validarIngreso(EditText user, EditText password){
-        Boolean success= false;
+        Boolean success = false;
         String SPSQL = "{? = call usp_EstudianteRead (?,?)}";
         try{
             AzureConnection connexion= new AzureConnection();
