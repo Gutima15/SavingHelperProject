@@ -46,29 +46,29 @@
         app:layout_constraintVertical_bias="0.0">
 
         <RadioButton
+            android:id="@+id/rbtn_diario"
+            android:layout_width="101sp"
+            android:layout_height="21sp"
+            android:layout_marginTop="32dp"
+            android:buttonTint="#003C8F"
+            android:text="Diario"
+            app:layout_constraintBottom_toTopOf="@id/rbtn_semanal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <RadioButton
             android:id="@+id/rbtn_semanal"
             android:layout_width="101sp"
             android:layout_height="21sp"
             android:layout_marginTop="32dp"
             android:buttonTint="#003C8F"
             android:text="Semanal"
-            app:layout_constraintBottom_toTopOf="@id/rbtn_quincenal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.502"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <RadioButton
-            android:id="@+id/rbtn_quincenal"
-            android:layout_width="101sp"
-            android:layout_height="21sp"
-            android:layout_marginTop="32dp"
-            android:buttonTint="#003C8F"
-            android:text="Quincenal"
             app:layout_constraintBottom_toTopOf="@id/rbtn_mensual"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rbtn_semanal" />
+            app:layout_constraintTop_toBottomOf="@id/rbtn_diario" />
 
         <RadioButton
             android:id="@+id/rbtn_mensual"
@@ -80,7 +80,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rbtn_quincenal" />
+            app:layout_constraintTop_toBottomOf="@id/rbtn_semanal" />
     </RadioGroup>
 
     <Button

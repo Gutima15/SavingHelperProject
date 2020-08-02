@@ -11,17 +11,36 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.text.DecimalFormat;
+
+import com.example.saving_helper.Utiles.Singleton;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
 
 public class ObjetivoDeAhorro extends AppCompatActivity {
     private AlertDialog.Builder dialogBuilder;
     private AlertDialog dialog;
     private EditText txfNuevoObjetivo;
     private Button btnNuevoObjetivoCancel, btnNuevoObjetivoAceptar, btn_cambiar_objetivo_back;
+    private TextView lblValorObjetivo, lblValorProgresoObjetivo;
+    private Singleton user = Singleton.getInstance();
+    private DecimalFormat df = new DecimalFormat("0.00");
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         /*CONTEMPLAR LA CARGA DESDE LA BASE DE DATOS*/
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_objetivo_de_ahorro);
+        float ObjetivoOnDB = get_ObjetivoAhorro_DB();
+        float PorcentajeAvanceOnDB = get_PorcentajeProgreso_DB();
+        lblValorObjetivo = findViewById(R.id.lblValorObjetivo);
+        lblValorObjetivo.setText("₡" + df.format(ObjetivoOnDB).toString());
+        lblValorProgresoObjetivo  = findViewById(R.id.lblValorProgresoObjetivo);
+        lblValorProgresoObjetivo.setText(df.format(PorcentajeAvanceOnDB).toString() + "%");
+
+
 
         final Button btnCambiarObjetivoAhorro = findViewById(R.id.btnCambiarObjetivoAhorro);
         btnCambiarObjetivoAhorro.setOnClickListener(new View.OnClickListener() {
@@ -66,7 +85,12 @@ public class ObjetivoDeAhorro extends AppCompatActivity {
                 if(!txfNuevoObjetivo.getText().toString().equals("")){
                     int value = Integer.parseInt(txfNuevoObjetivo.getText().toString());
                     if(value > 0){
-                        //envia el valor a la base de datos
+                        //DB
+                        set_objetivo_DB(value);
+                        float PorcentajeAvanceOnDB = get_PorcentajeProgreso_DB();
+                        lblValorProgresoObjetivo  = findViewById(R.id.lblValorProgresoObjetivo);
+                        lblValorProgresoObjetivo.setText(df.format(PorcentajeAvanceOnDB).toString() + "%");
+                        //GUI
                         String toLabel = "₡" + value;
                         label.setText(toLabel);
                         dialog.dismiss();
@@ -100,5 +124,85 @@ public class ObjetivoDeAhorro extends AppCompatActivity {
             }
         });
 
+    }
+
+    private float get_ObjetivoAhorro_DB(){
+        float ObjetivoAhorro = 0;
+        int id = user.ID;
+        String SPSQL = "exec usp_GetObjetivoAhorroById " + String.valueOf(id);
+        try{
+            AzureConnection connexion= new AzureConnection();
+            Connection con = connexion.connectionClass();
+            if (con == null){
+                //show error
+                Toast toast = Toast.makeText(getApplicationContext(), "Error: Conexion nula", Toast.LENGTH_LONG);
+                toast.show();
+                toast.setGravity(Gravity.BOTTOM|Gravity.CENTER, 0, 300);
+            }else{
+                ResultSet usp = con.createStatement().executeQuery(SPSQL);
+                while(usp.next()){
+                    ObjetivoAhorro = usp.getFloat("ObjetivoAhorro");
+                    break;
+                }
+                con.close();
+            }
+        } catch (Exception ex) {
+            String error = "Error: " + ex.toString();
+            Toast toast = Toast.makeText(getApplicationContext(), error, Toast.LENGTH_LONG);
+            toast.show();
+            toast.setGravity(Gravity.BOTTOM|Gravity.CENTER, 0, 300);
+        }
+        return ObjetivoAhorro;
+    }
+
+    private void set_objetivo_DB(float newObjetivo){
+        int id = user.ID;
+        String SPSQL = "exec usp_SetObjetivoAhorroById " + String.valueOf(id) + ", " + String.valueOf(newObjetivo) ;
+        try{
+            AzureConnection connexion= new AzureConnection();
+            Connection con = connexion.connectionClass();
+            if (con == null){
+                Toast toast = Toast.makeText(getApplicationContext(), "Error: Conexion nula", Toast.LENGTH_LONG);
+                toast.show();
+                toast.setGravity(Gravity.BOTTOM|Gravity.CENTER, 0, 300);
+            }else{
+                con.createStatement().execute(SPSQL);
+                con.close();
+            }
+        } catch (Exception ex) {
+
+            String error = "Error: " + ex.toString();
+            Toast toast = Toast.makeText(getApplicationContext(), error, Toast.LENGTH_LONG);
+            toast.show();
+            toast.setGravity(Gravity.BOTTOM|Gravity.CENTER, 0, 300);
+        }
+    }
+
+    private float get_PorcentajeProgreso_DB(){
+        float PorcentajeAhorro = 0;
+        int id = user.ID;
+        String SPSQL = "exec usp_GetPorcentajeProgresoAhorroById " + String.valueOf(id);
+        try{
+            AzureConnection connexion= new AzureConnection();
+            Connection con = connexion.connectionClass();
+            if (con == null){
+                Toast toast = Toast.makeText(getApplicationContext(), "Error: Conexion nula", Toast.LENGTH_LONG);
+                toast.show();
+                toast.setGravity(Gravity.BOTTOM|Gravity.CENTER, 0, 300);
+            }else{
+                ResultSet usp = con.createStatement().executeQuery(SPSQL);
+                while(usp.next()){
+                    PorcentajeAhorro = usp.getFloat("Porcentaje");
+                    break;
+                }
+                con.close();
+            }
+        } catch (Exception ex) {
+            String error = "Error: " + ex.toString();
+            Toast toast = Toast.makeText(getApplicationContext(), error, Toast.LENGTH_LONG);
+            toast.show();
+            toast.setGravity(Gravity.BOTTOM|Gravity.CENTER, 0, 300);
+        }
+        return PorcentajeAhorro;
     }
 }
