@@ -65,10 +65,6 @@ public class EtiquetaListAdapter extends ArrayAdapter<Etiqueta> {
 
         textView_Nombre.setText(nombre);
         image_Etiqueta.setColorFilter(Color.parseColor(color));
-
-
-
-
         GastoListAdapter adapter = new GastoListAdapter(mContext, R.layout.layout_etiquetas_gastos,gastos);
 
         listView_Gastos.setAdapter(adapter);

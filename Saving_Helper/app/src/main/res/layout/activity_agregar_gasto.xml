@@ -119,7 +119,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/botonEntrar4"
-        app:layout_constraintTop_toBottomOf="@+id/contraseñaVerificacion" />
+        app:layout_constraintTop_toBottomOf="@+id/contraseñaVerificacion"
+        android:onClick="agregarGasto"/>
 
     <TextView
         android:id="@+id/labelNombreGasto2"

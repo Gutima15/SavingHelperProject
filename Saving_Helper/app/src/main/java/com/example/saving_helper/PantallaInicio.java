@@ -39,7 +39,11 @@ public class PantallaInicio extends AppCompatActivity {
         startActivity(intent);
 
     }
-
+    public void activity_agregar_dinero(View v) {
+        Intent intent = new Intent(this, AgregarDinero.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
     // monto disponible --------------------------------------------------------------------------//
 
     public void updateMontoDisp() {
