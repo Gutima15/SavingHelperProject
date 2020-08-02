@@ -98,7 +98,7 @@ public class ModificarGastoActivity extends AppCompatActivity {
             rs = ps.executeQuery();
             while (rs.next()) {
                 String IDEtiqueta = rs.getString("NombreEtiqueta");
-                if (nombreEti == IDEtiqueta){
+                if (nombreEti.equals(IDEtiqueta)){
                     result = rs.getInt("IDetiqueta");
                 }
             }
@@ -128,8 +128,8 @@ public class ModificarGastoActivity extends AppCompatActivity {
             rs = ps.executeQuery();
             while (rs.next()) {
                 String nombreGast = rs.getString("NombreGasto");
-                int IDEti = rs.getInt("IdEtiqueta");
-                if(nombreGast == nombreOld & IDEti== etiquetaOldId){
+                int IDEti = rs.getInt("EtiquetaID");
+                if(nombreGast.equals(nombreOld) && IDEti== etiquetaOldId){
                     result = rs.getInt("GastoID");
                 }
             }
@@ -141,7 +141,7 @@ public class ModificarGastoActivity extends AppCompatActivity {
     }
 
     public void updateGastoValues(int IDGasto, int IDEtiqueta, float monto, String nombre, String fecha){
-        String SPSQL = "{? = call usp_GastoUpdate (?,?,?,?,?)}";
+        String SPSQL = "{call usp_GastoUpdate (?,?,?,?,?)}";
         Boolean success = false;
         try{
             AzureConnection connexion= new AzureConnection();
@@ -152,13 +152,16 @@ public class ModificarGastoActivity extends AppCompatActivity {
                 CallableStatement ps = con.prepareCall(SPSQL);
                 ps.setEscapeProcessing(true);
                 ps.setQueryTimeout(1000);
-                ps.setInt(1,getGastoID());
+                ps.setInt(1,IDGasto);
                 ps.setInt(2,IDEtiqueta);
                 ps.setFloat(3, monto);
                 ps.setString(4,nombre);
                 SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-                ps.setDate(5, (Date) format.parse(fecha));
+                java.util.Date fech =  format.parse(fecha);
+                java.sql.Date fechaSQL = new java.sql.Date(fech.getTime());
+                ps.setDate(5, fechaSQL);
                 //
+                Log.d("Ino ", monto +" " + nombre + " " + fecha+ " " + IDEtiqueta+ " "+ IDGasto);
                 ps.execute();
                 con.close();
             }
@@ -218,19 +221,19 @@ public class ModificarGastoActivity extends AppCompatActivity {
         return saldoDisp;
     }
 
-    public void modificarGasto(){
+    public void modificarGasto(View v){
         nombreGasto = findViewById(R.id.nombreGasto);
         String nombreField= nombreGasto.getText().toString();
 
         monto = findViewById(R.id.monto);
         String montoField = monto.getText().toString();
 
-
         fecha = findViewById(R.id.editTextDate);
         String fechaField = fecha.getText().toString();
 
         spinner=findViewById(R.id.etiquetasDropDown);
         String spinerField = spinner.getSelectedItem().toString();
+
         if (!hayBlancos(nombreField,montoField,fechaField,spinerField)){
             if(!validarExpresionRegular(fechaField, "^([0-2][0-9]|3[0-1])(\\/)(0[1-9]|1[0-2])\\2(\\d{4})$")){
                 Toast toast = Toast.makeText(getApplicationContext(), "Ingrese un formato válido de fecha. Ej: dd/mm/aaaa", Toast.LENGTH_LONG);
@@ -238,7 +241,9 @@ public class ModificarGastoActivity extends AppCompatActivity {
                 toast.setGravity(Gravity.BOTTOM|Gravity.CENTER, 0, 300);
             }else{
                 //Funcionan tonses loa actualizo
+                Log.d("Antes","GastoValues");
                 updateGastoValues(getGastoID(), getEtiquetaID(spinerField), Float.parseFloat(montoField), nombreField, fechaField);
+
                 Intent intent = new Intent(this, EtiquetaActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
@@ -257,7 +262,7 @@ public class ModificarGastoActivity extends AppCompatActivity {
     }
 
     public boolean hayBlancos(String nombre, String monto, String fecha, String etiqueta){
-        if (nombre == "" | monto == ""| fecha == "" | etiqueta == ""){
+        if (nombre.equals("") || monto.equals("") || fecha.equals("") || etiqueta.equals("")){
             return true;
         }else{
             return false;

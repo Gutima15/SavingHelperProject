@@ -1,14 +1,18 @@
 package com.example.saving_helper;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.EditTextPreferenceDialogFragmentCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.saving_helper.Objetos.Etiqueta;
 import com.example.saving_helper.Objetos.Gasto;
@@ -26,6 +30,8 @@ public class AgregarGastoActivity extends AppCompatActivity {
     private Singleton user;
     private Spinner spinner;
     private TextView saldoDisponoble;
+    private EditText nombreGasto;
+    private EditText monto;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +47,10 @@ public class AgregarGastoActivity extends AppCompatActivity {
         spinner.setSelection(etiquetas.indexOf(etiquetaActual));
         saldoDisponoble = findViewById(R.id.saldoDisponibleAgr);
         saldoDisponoble.setText(String.valueOf(getSaldoDisponible(user.ID)));
+        nombreGasto= findViewById(R.id.nombreGasto2);
+        monto = findViewById(R.id.monto2);
+
+
     }
     public void activity_menu_con_iconos(View v){
         Intent intent = new Intent(this, MenuConIconos.class);
@@ -101,4 +111,41 @@ public class AgregarGastoActivity extends AppCompatActivity {
         return saldoDisp;
     }
 
+    public void agregarGasto(View v){
+        String spinerField = spinner.getSelectedItem().toString();
+        String nombreG = nombreGasto.getText().toString();
+        float montoBase = Float.valueOf(monto.getText().toString());
+        String SPSQL = "{call usp_GastoCreate (?,?,?,?,?)}";
+        try {
+            AzureConnection connexion = new AzureConnection();
+            Connection con = connexion.connectionClass();
+            if (con == null) {
+                //show error
+                System.out.println("error");
+            } else {
+                CallableStatement ps = con.prepareCall(SPSQL);
+                ps.setEscapeProcessing(true);
+                ps.setQueryTimeout(1000);
+                ps.setInt(1,user.ID);
+                ps.setString(2,spinerField);
+                ps.setFloat(3,montoBase);
+                ps.setString(4,nombreG);
+
+                java.util.Date fech =  new java.util.Date();
+                java.sql.Date fechaSQL = new java.sql.Date(fech.getTime());
+                ps.setDate(5, fechaSQL);
+                ps.execute();
+                con.close();
+            }
+        } catch (Exception ex) {
+            Log.d("josebuddy", ex.toString());;
+        }
+        Toast toast = Toast.makeText(getApplicationContext(), "El gasto ha sido añadido",Toast.LENGTH_LONG );
+        toast.show();
+        toast.setGravity(Gravity.BOTTOM|Gravity.CENTER, 0, 300);
+
+        Intent intent = new Intent(this, EtiquetaActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
 }
