@@ -38,6 +38,7 @@
             android:textSize="22sp" />
 
     </Toolbar>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -46,6 +47,27 @@
             android:text="Detalles de progreso"
             android:textColor="@android:color/black"
             android:textSize="22sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4sp"
+            android:padding="50sp"
+            android:layout_marginTop="80sp"
+            android:text="Este objetivo está conformado por dos reglas, la primera de estas reglas dice que, si el saldo disponible del periodo más reciente es mayor o igual al objetivo de ahorro, este objetivo se considera un 100% cumplido. De lo contrario, se realiza el cálculo del porcentaje de completitud del objetivo utilizando una regla de 3, utilizando como variables el objetivo de ahorro, equivalente al 100% de completitud y el saldo actual del periodo más reciente."
+            android:textColor="@android:color/black"
+            android:textSize="22sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40sp"
+            android:layout_marginTop="630sp"
+            android:padding="10sp"
+            android:text="Porcentaje = (Saldo actual * 100) / Objetivo de ahorro"
+            android:textColor="@android:color/black"
+            android:textSize="22sp" />
+
+
+
 
     </RelativeLayout>
 
