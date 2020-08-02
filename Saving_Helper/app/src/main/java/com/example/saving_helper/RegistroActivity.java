@@ -70,39 +70,6 @@ public class RegistroActivity extends AppCompatActivity {
         return matcher.matches();
     }
 
-
-    public String pruebaC (View v){
-        String z = "";
-        String passWord = "";
-        Boolean success= true;
-        try{
-            AzureConnection conexion= new AzureConnection();
-            Connection con = conexion.connectionClass();
-            if (con == null){
-                z = "Se cae";
-            }else{
-                String query = "select * from Estudiante";
-                Statement stmt = con.createStatement();
-                ResultSet rs = stmt.executeQuery(query);
-                if(rs.next()){
-                    passWord = rs.getString("Contraseña");
-                    z= "IT WORKS BRO";
-                    con.close();
-                }else{
-                    z = "Invalid query";
-                    success= false;
-                }
-            }
-        } catch (Exception ex) {
-            success= false;
-            z=ex.getMessage();
-        }
-        System.out.println(z);
-        System.out.println(passWord);
-        return passWord;
-    }
-
-
     public void crearUsuario(String textCorreo, String textContra){
         String textoNombreP =  nombreField.getText().toString();
         String textoApellidos = apellidosField.getText().toString();
@@ -137,7 +104,6 @@ public class RegistroActivity extends AppCompatActivity {
             z=ex.getMessage();
         }
         System.out.println(z);
-        Log.d("Ins", textoNombreP + " " + textoApellidos + " " + textCorreo + " " + textoUserName + " " + textContra);
     }
 
 }

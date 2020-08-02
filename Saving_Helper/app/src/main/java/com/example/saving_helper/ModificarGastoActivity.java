@@ -161,7 +161,6 @@ public class ModificarGastoActivity extends AppCompatActivity {
                 java.sql.Date fechaSQL = new java.sql.Date(fech.getTime());
                 ps.setDate(5, fechaSQL);
                 //
-                Log.d("Ino ", monto +" " + nombre + " " + fecha+ " " + IDEtiqueta+ " "+ IDGasto);
                 ps.execute();
                 con.close();
             }
