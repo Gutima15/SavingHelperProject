@@ -34,10 +34,11 @@
         app:layout_constraintTop_toTopOf="@+id/containerSaldo"
         app:layout_constraintVertical_bias="0.252" />
 
+
     <TextView
         android:id="@+id/lblSaldo"
-        android:layout_width="254sp"
-        android:layout_height="51sp"
+        android:layout_width="253dp"
+        android:layout_height="59dp"
         android:clickable="false"
         android:text="₡100000"
         android:textAlignment="center"
@@ -47,8 +48,7 @@
         app:layout_constraintEnd_toEndOf="@+id/containerSaldo"
         app:layout_constraintStart_toStartOf="@+id/containerSaldo"
         app:layout_constraintTop_toTopOf="@+id/containerSaldo"
-        app:layout_constraintVertical_bias="0.779" />
-
+        app:layout_constraintVertical_bias="0.714" />
 
     <TextView
         android:id="@+id/lblIndiqueSaldo"
