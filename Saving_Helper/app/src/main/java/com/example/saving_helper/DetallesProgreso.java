@@ -14,7 +14,11 @@ public class DetallesProgreso extends AppCompatActivity {
         setContentView(R.layout.activity_detalles_progreso);
     }
 
-
+    public void AAactivity_objetivo_de_ahorro(View v) {
+        Intent intent = new Intent(this, ObjetivoDeAhorro.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
 
 
 

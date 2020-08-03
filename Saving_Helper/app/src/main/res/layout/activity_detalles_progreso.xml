@@ -26,6 +26,7 @@
             android:layout_width="25sp"
             android:layout_height="23sp"
             android:background="@drawable/abc_vector_test"
+            android:onClick="AAactivity_objetivo_de_ahorro"
 
             />
 

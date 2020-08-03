@@ -43,9 +43,9 @@ public class Graficas extends AppCompatActivity {
                 ResultSet ps = con.createStatement().executeQuery(SPSQL);
                 int cont = 1;
 
-                String Valor1="111";
-                String Valor2="222";
-                String Valor3="333";
+                String Valor1="";
+                String Valor2="";
+                String Valor3="";
 
                 while (ps.next()) {
                     if (cont == 1){
@@ -95,9 +95,9 @@ public class Graficas extends AppCompatActivity {
                 ResultSet ps = con.createStatement().executeQuery(SPSQL);
                 int cont = 1;
 
-                String Valor1="111";
-                String Valor2="222";
-                String Valor3="333";
+                String Valor1="";
+                String Valor2="";
+                String Valor3="";
 
                 while (ps.next()) {
                     if (cont == 1){
