@@ -91,18 +91,20 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/agregargasto"
                 android:onClick="activity_agregar_gasto"/>
+
             <ImageButton
                 android:id="@+id/Objetivo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30sp"
                 android:layout_marginTop="450sp"
+                android:onClick="activity_objetivo_ahorro"
                 app:layout_constraintEnd_toStartOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/obejtivodeahorro"
-                android:onClick="activity_objetivo_ahorro"/>
+                app:srcCompat="@drawable/obejtivodeahorro" />
+
             <ImageButton
                 android:id="@+id/Etiquetas"
                 android:layout_width="wrap_content"
@@ -115,19 +117,20 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/etiquetas"
                 android:onClick="activity_pantallaEtiqueta"/>
+
             <ImageButton
                 android:id="@+id/Grafico"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30sp"
                 android:layout_marginTop="650sp"
+                android:onClick="activity_graficas"
                 app:layout_constraintEnd_toStartOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/info_ahorros"
-                android:onClick="activity_graficas"
-                />
+                app:srcCompat="@drawable/info_ahorros" />
+
             <ImageButton
                 android:id="@+id/Config"
                 android:layout_width="wrap_content"
